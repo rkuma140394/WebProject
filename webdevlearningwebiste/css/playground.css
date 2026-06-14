@@ -1,0 +1,264 @@
+/* ============================================
+   JS FORGE - PLAYGROUND.CSS
+   IDE layout, toolbar, editor panel, output panel, tabs
+   ============================================ */
+
+/* IDE Toolbar */
+.ide-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.lang-select {
+  padding: 8px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.lang-select:focus {
+  border-color: var(--accent);
+}
+
+.toolbar-sep {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+}
+
+.run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.run-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+}
+
+.run-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.clear-code-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-code-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.status-badge.ready {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+}
+
+.status-badge.loading {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--yellow);
+}
+
+.keyboard-hint {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* IDE Container */
+.ide-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+}
+
+/* Editor Panel */
+.editor-panel {
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+#monaco-editor {
+  width: 100%;
+  height: 100%;
+}
+
+/* Output Panel */
+.output-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+}
+
+.output-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.output-tab {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  font-family: var(--font-mono);
+}
+
+.output-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.output-tab:hover:not(.active) {
+  color: var(--text-secondary);
+}
+
+.output-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+/* Console Output */
+#console-output {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+#console-output pre {
+  margin: 0 0 6px 0;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+#console-output pre.log {
+  color: var(--text);
+}
+
+#console-output pre.error {
+  color: var(--red);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+#console-output pre.warn {
+  color: var(--yellow);
+  background: rgba(234, 179, 8, 0.08);
+}
+
+#console-output pre.info {
+  color: var(--blue);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+#console-output pre.success {
+  color: var(--green);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+#console-output .placeholder {
+  color: var(--text-muted);
+}
+
+/* Preview Frame */
+#preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  border-radius: var(--radius-sm);
+}
+
+/* Python Loader */
+.python-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.python-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ide-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .editor-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .keyboard-hint {
+    display: none;
+  }
+}

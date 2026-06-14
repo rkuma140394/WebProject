@@ -1,0 +1,188 @@
+/* ============================================
+   JS FORGE - JAVASCRIPT PAGE STYLES
+   Focused styles for javascript.html hero, examples, and layout polish
+   ============================================ */
+
+.js-hero {
+  background: linear-gradient(135deg, rgba(139,92,246,0.10), rgba(99,102,241,0.04));
+  border-radius: 16px;
+  padding: 48px 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 60px rgba(7,7,10,0.6);
+  position: relative; /* ensure decorative pseudo element positions correctly */
+}
+
+.js-hero .hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.js-hero .hero-left {
+  padding-right: 12px;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 72px; /* below fixed navbar */
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  color: var(--text);
+  border-radius: 6px;
+  z-index: 2000;
+}
+
+/* Focus outlines for keyboard users */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.nav-links a:focus-visible,
+.output-tab:focus-visible,
+.example-actions a:focus-visible,
+.example-actions button:focus-visible {
+  outline: 3px solid rgba(139,92,246,0.25);
+  outline-offset: 3px;
+}
+
+.hero-title {
+  /* gradient headline */
+  background: linear-gradient(135deg, #ffffff 10%, var(--accent-light) 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-benefits {
+  display:flex;
+  gap:8px;
+  list-style:none;
+  padding:0;
+  margin: 12px 0 18px 0;
+}
+.hero-benefits li {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.hero-actions { display:flex; gap:12px; align-items:center; }
+
+.hero-right .feature-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+pre.example {
+  background: linear-gradient(180deg, rgba(10,10,16,0.6), rgba(10,10,16,0.5));
+  border: 1px solid var(--border-light);
+  padding: 14px;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  overflow: auto;
+}
+
+.example-actions {
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+  margin-top:10px;
+}
+
+.example + .example-actions,
+.example-actions { margin-top: 10px; }
+
+.preview-card { transition: transform 0.25s, box-shadow 0.25s; }
+.preview-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+
+/* Improve spacing for content sections */
+.card { padding: 28px; }
+
+/* Button polish for page */
+.btn-primary { padding: 10px 18px; border-radius: 10px; }
+.btn-secondary { padding: 8px 14px; border-radius: 10px; }
+
+/* Decorative accent */
+.js-hero::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive: stack hero actions on small screens and make CTAs full width */
+@media (max-width: 680px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; display: inline-flex; justify-content: center; }
+  .js-hero { padding: 28px 16px; }
+  .js-hero .hero-inner { gap: 18px; }
+}
+
+@media (max-width: 980px) {
+  .js-hero .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { order: 2; }
+}
+
+/* Inline example editor and runner styles */
+.example-editor {
+  background: var(--bg-input, #0b0b0d);
+  color: var(--text);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.example-run-output iframe {
+  border-radius: 8px;
+  background: #fff;
+}
+
+.example-run-output button { display: inline-block; }
+
+.example-hint {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
