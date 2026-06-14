@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Language IDE — devcraft</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/playground.css"/>
+</head>
+<body class="inner-page">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;devcraft/&gt;</span>
+      </a>
+      <div class="nav-links">
+        <a href="playground.html">Playground</a>
+        <a href="visualizer.html">Visualizer</a>
+        <a href="bitwise.html">Lab</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="git.html">Community</a>
+      </div>
+      <button id="theme-toggle" class="btn-icon" aria-label="Switch to light mode">🌙</button>
+      <a href="playground.html" class="nav-cta">Start Free →</a>
+    </div>
+  </nav>
+
+  <div class="ide-toolbar">
+    <select id="lang-select" class="lang-select">
+      <option value="html">🌐 HTML</option>
+      <option value="css">🎨 CSS</option>
+      <option value="javascript">⚡ JavaScript</option>
+      <option value="python">🐍 Python</option>
+      <option value="typescript">🔷 TypeScript</option>
+      <option value="json">📋 JSON</option>
+      <option value="markdown">📝 Markdown</option>
+      <option value="sql">🗄️ SQL</option>
+    </select>
+    <div class="toolbar-sep"></div>
+    <button id="run-btn" class="run-btn">▶ Run</button>
+    <button id="clear-code-btn" class="clear-code-btn">🧹 Clear Code</button>
+    <button id="clear-btn" class="btn-secondary" style="padding:8px 16px;font-size:0.85rem;">🗑️ Clear Output</button>
+    <button id="reset-btn" class="btn-secondary" style="padding:8px 16px;font-size:0.85rem;">↺ Reset</button>
+    <span id="py-status" class="status-badge ready" style="display:none;">Python Ready</span>
+    <span class="keyboard-hint">Ctrl+Enter to run</span>
+  </div>
+
+  <div class="ide-container">
+    <div class="editor-panel">
+      <div id="monaco-editor"></div>
+    </div>
+    <div class="output-panel">
+      <div class="output-tabs">
+        <div class="output-tab active" data-tab="console">Console</div>
+        <div class="output-tab" data-tab="preview">Preview</div>
+      </div>
+      <div class="output-content">
+        <div id="console-output">
+          <pre class="placeholder">// Select a language and click Run to see output...</pre>
+        </div>
+        <iframe id="preview-frame" style="display:none;"></iframe>
+        <div id="python-loader" class="python-loading" style="display:none;">
+          <div class="spinner"></div>
+          <span>Loading Python runtime (Pyodide)...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monaco Editor Loader -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+  <!-- Pyodide for Python -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/playground.js"></script>
+</body>
+</html>

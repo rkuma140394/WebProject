@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bitwise Lab — devcraft</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+<base target="_blank">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;devcraft/&gt;</span>
+      </a>
+      <div class="nav-links">
+        <a href="playground.html">Playground</a>
+        <a href="visualizer.html">Visualizer</a>
+        <a href="bitwise.html">Lab</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="git.html">Community</a>
+      </div>
+      <button id="theme-toggle" class="btn-icon" aria-label="Switch to light mode">🌙</button>
+      <a href="playground.html" class="nav-cta">Start Free →</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1 class="page-title">Bitwise <span class="gradient-text">Laboratory</span></h1>
+      <p class="page-desc">// Watch bits flip in real-time. JS converts numbers to 32-bit integers during bitwise operations.</p>
+    </div>
+
+    <div class="bitwise-lab card">
+      <div class="operands-row">
+        <div class="operand-box">
+          <label>Value A</label>
+          <input type="number" id="bit-a" value="5" min="0" max="255"/>
+          <div id="bits-a" class="bit-row"></div>
+          <div class="decimal-label" id="label-a">A = 5</div>
+        </div>
+
+        <div class="operator-box">
+          <label>Operator</label>
+          <select id="operator">
+            <option value="&">AND &</option>
+            <option value="|">OR |</option>
+            <option value="^">XOR ^</option>
+            <option value="<<">Left Shift <<</option>
+            <option value=">>">Right Shift >></option>
+            <option value=">>>">Zero Fill >>></option>
+          </select>
+        </div>
+
+        <div class="operand-box">
+          <label>Value B</label>
+          <input type="number" id="bit-b" value="3" min="0" max="255"/>
+          <div id="bits-b" class="bit-row"></div>
+          <div class="decimal-label" id="label-b">B = 3</div>
+        </div>
+      </div>
+
+      <div class="equals-divider">=</div>
+
+      <div class="result-box">
+        <div id="bits-result" class="bit-row"></div>
+        <div id="decimal-result" class="result-label">5 & 3 = 1</div>
+        <div id="binary-result" class="binary-label">0b00000001</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="card info-card">
+        <h4>💡 Pro Tip</h4>
+        <p><code>x | 0</code> truncates decimals (like Math.trunc). Try it in the Playground!</p>
+      </div>
+      <div class="card info-card">
+        <h4>🎮 Use Case</h4>
+        <p>Game developers use bitwise flags to store multiple boolean settings in one number.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &lt;devcraft/&gt; · built with ❤️ for curious minds · © 2026
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/bitwise.js"></script>
+</body>
+</html>

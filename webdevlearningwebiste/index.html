@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>devcraft — Code your way to mastery</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;devcraft/&gt;</span>
+      </a>
+      <div class="nav-links">
+        <a href="playground.html">Playground</a>
+        <a href="visualizer.html">Visualizer</a>
+        <a href="bitwise.html">Lab</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="git.html">Community</a>
+      </div>
+      <button id="theme-toggle" class="btn-icon" aria-label="Switch to light mode">🌙</button>
+      <a href="playground.html" class="nav-cta">Start Free →</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="badge animate">
+      <span class="badge-dot"></span>
+      <span>Interactive Learning Platform</span>
+    </div>
+    <h1 class="hero-title animate delay-1">
+      Code your way<br>to <span class="gradient-text">mastery.</span>
+    </h1>
+    <p class="hero-subtitle animate delay-2">
+      // Learn HTML, CSS, JS, React & more — through<br>
+      hands-on projects and instant feedback
+    </p>
+    <div class="hero-actions animate delay-3">
+      <a href="playground.html" class="btn-primary btn-lg">🚀 Start Learning Free</a>
+      <a href="visualizer.html" class="btn-secondary btn-lg">▶ Watch Demo</a>
+    </div>
+
+    <!-- Code Editor Mockup -->
+    <div class="editor-mockup animate delay-4">
+      <div class="editor-header">
+        <div class="editor-dot red"></div>
+        <div class="editor-dot yellow"></div>
+        <div class="editor-dot green"></div>
+        <span class="editor-title">hello-world.js — devcraft IDE</span>
+      </div>
+      <div class="editor-body">
+        <div><span class="code-comment">// Let's write your first function ✨</span></div>
+        <div><span class="code-keyword">function</span> <span class="code-function">greetDev</span><span class="code-plain">(</span><span class="code-variable">name</span><span class="code-plain">) {</span></div>
+        <div>&nbsp;&nbsp;<span class="code-keyword">const</span> <span class="code-variable">message</span> <span class="code-plain">=</span> <span class="code-string">`Hello, ${name}`</span><span class="code-plain">;</span></div>
+        <div>&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-variable">message</span><span class="code-plain">;</span></div>
+        <div><span class="code-plain">}</span></div>
+        <div>&nbsp;</div>
+        <div><span class="code-function">greetDev</span><span class="code-plain">(</span><span class="code-string">"World"</span><span class="code-plain">);</span> <span class="code-comment">// → "Hello, World"</span><span class="cursor"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat-item">
+      <div class="stat-number" data-target="240">0</div>
+      <div class="stat-label">lessons</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="80">0</div>
+      <div class="stat-label">projects built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="12000">0</div>
+      <div class="stat-label">learners</div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-section">
+    <div class="section-label">— Choose Your Technology —</div>
+    <div class="tech-grid">
+      <a href="html5.html" class="tech-card">
+        <span class="tech-icon">📦</span>
+        <div class="tech-name">HTML5</div>
+        <div class="tech-desc">Foundation</div>
+      </a>
+      <a href="css3.html" class="tech-card">
+        <span class="tech-icon">🎨</span>
+        <div class="tech-name">CSS3</div>
+        <div class="tech-desc">Styling</div>
+      </a>
+      <a href="javascript.html" class="tech-card" style="position:relative;">
+        <span style="position:absolute; top:8px; right:8px; background:var(--green); color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:100px; text-transform:uppercase; letter-spacing:0.5px;">Live</span>
+        <span class="tech-icon">⚡</span>
+        <div class="tech-name">JavaScript</div>
+        <div class="tech-desc">10 Modules + Projects</div>
+      </a>
+      <a href="react.html" class="tech-card">
+        <span class="tech-icon">⚛️</span>
+        <div class="tech-name">React</div>
+        <div class="tech-desc">Frontend</div>
+      </a>
+      <a href="typescript.html" class="tech-card">
+        <span class="tech-icon">🔷</span>
+        <div class="tech-name">TypeScript</div>
+        <div class="tech-desc">Typed JS</div>
+      </a>
+      <a href="nodejs.html" class="tech-card">
+        <span class="tech-icon">🖥️</span>
+        <div class="tech-name">Node.js</div>
+        <div class="tech-desc">Backend</div>
+      </a>
+      <a href="git.html" class="tech-card">
+        <span class="tech-icon">🌿</span>
+        <div class="tech-name">Git</div>
+        <div class="tech-desc">Version Control</div>
+      </a>
+      <a href="restapis.html" class="tech-card">
+        <span class="tech-icon">🔌</span>
+        <div class="tech-name">REST APIs</div>
+        <div class="tech-desc">Integration</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Learning Path -->
+  <section class="path-section">
+    <div class="section-label">— Your Learning Path —</div>
+    <h2 class="path-title">From zero to job-ready.</h2>
+    <p class="path-subtitle">// Click any step to start learning</p>
+
+    <div class="timeline">
+      <div class="timeline-item completed">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h3>Web Fundamentals</h3>
+          <p class="timeline-desc">HTML structure, semantic tags, forms, and accessibility basics.</p>
+          <div class="tag-list">
+            <span class="tag">HTML5</span>
+            <span class="tag">Semantics</span>
+            <span class="tag">Forms</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h3>Styling & Layouts <span class="timeline-status">← You are here</span></h3>
+          <p class="timeline-desc">Flexbox, Grid, animations, responsive design and CSS variables.</p>
+          <div class="tag-list">
+            <span class="tag">CSS3</span>
+            <span class="tag">Flexbox</span>
+            <span class="tag">Grid</span>
+            <span class="tag">Responsive</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h3>JavaScript Mastery</h3>
+          <p class="timeline-desc">DOM manipulation, async/await, ES6+, and browser APIs.</p>
+          <div class="tag-list">
+            <span class="tag">JS</span>
+            <span class="tag">DOM</span>
+            <span class="tag">Async</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">4</div>
+        <div class="timeline-content">
+          <h3>React & Ecosystem</h3>
+          <p class="timeline-desc">Components, hooks, state management, React Router & Next.js.</p>
+          <div class="tag-list">
+            <span class="tag">React</span>
+            <span class="tag">Hooks</span>
+            <span class="tag">Next.js</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-number">5</div>
+        <div class="timeline-content">
+          <h3>Backend & Deployment</h3>
+          <p class="timeline-desc">Node.js, REST APIs, databases, and deploying to the web.</p>
+          <div class="tag-list">
+            <span class="tag">Node.js</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Deploy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz-section">
+    <div class="section-label">— Test Yourself —</div>
+    <div class="quiz-card" id="mini-quiz">
+      <div class="quiz-question">
+        <span class="quiz-question-icon">🧠</span>
+        <span>Quick question: What does CSS stand for?</span>
+      </div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="checkAnswer(this, false)">A) Computer Style Sheets</button>
+        <button class="quiz-option" onclick="checkAnswer(this, true)">B) Cascading Style Sheets</button>
+        <button class="quiz-option" onclick="checkAnswer(this, false)">C) Creative Style Syntax</button>
+        <button class="quiz-option" onclick="checkAnswer(this, false)">D) Colorful Style Structures</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-card">
+      <h2 class="cta-title">Ready to build real things? ✨</h2>
+      <p class="cta-subtitle">// Join 12,000+ learners turning curiosity into careers</p>
+      <a href="playground.html" class="btn-primary btn-lg">🚀 Start Your Path — It's Free</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &lt;devcraft/&gt; · built with ❤️ for curious minds · © 2026
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

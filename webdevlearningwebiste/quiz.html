@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz — devcraft</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+<base target="_blank">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;devcraft/&gt;</span>
+      </a>
+      <div class="nav-links">
+        <a href="playground.html">Playground</a>
+        <a href="visualizer.html">Visualizer</a>
+        <a href="bitwise.html">Lab</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="git.html">Community</a>
+      </div>
+            <button id="theme-toggle" class="btn-icon" aria-label="Switch to light mode">🌙</button>
+      <a href="playground.html" class="nav-cta">Start Free →</a>
+    </div>
+  </nav>
+
+  <main class="container quiz-page">
+    <div class="page-header">
+      <h1 class="page-title">JavaScript <span class="gradient-text">Challenge</span></h1>
+      <p class="page-desc">// Test your knowledge with 10 carefully crafted questions</p>
+    </div>
+
+    <div class="quiz-card card">
+      <div class="quiz-header">
+        <span id="question-counter">Question 1 / 10</span>
+        <span id="score-display">Score: 0</span>
+      </div>
+
+      <div id="question-area">
+        <h2 id="question-text">Loading...</h2>
+        <div id="options-container" class="options-grid"></div>
+      </div>
+
+      <div id="feedback-area" class="feedback hidden">
+        <div id="feedback-icon"></div>
+        <p id="feedback-text"></p>
+        <button id="next-btn" class="btn-primary">Next Question</button>
+      </div>
+
+      <div id="results-area" class="results hidden">
+        <h2>🎉 Quiz Complete!</h2>
+        <p id="final-score"></p>
+        <button onclick="location.reload()" class="btn-primary">Try Again</button>
+        <a href="index.html" class="btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &lt;devcraft/&gt; · built with ❤️ for curious minds · © 2026
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
