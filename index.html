@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Quiz App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Knowledge Sprint</p>
+        <h1>Smart Quiz Challenge</h1>
+      </div>
+      <div class="score-badge" id="score-badge">Score: 0</div>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span id="progress-text">Question 1 of 4</span>
+        <span id="status-text">Pick the best answer</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </div>
+
+    <section class="quiz">
+      <h2 id="question">Question will appear here</h2>
+      <div id="answer-buttons" class="answer-buttons"></div>
+      <button id="next-btn">Next</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
