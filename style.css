@@ -109,7 +109,7 @@ body{
 
 @media (max-width:520px){
     .card{ padding: 18px }
-    .card-header h1{ font-size: 24px }
+    .card-header h2{ font-size: 25px }
     .subtitle{ font-size: 13px }
     .primary{ width:100%; justify-content:center }
     .controls{ margin-top:12px }
