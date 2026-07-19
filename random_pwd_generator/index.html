@@ -1,1 +1,37 @@
+<!DOCTYPE html> <!--//Document type declaration for HTML5 -->
+<html lang="hi"> <!--//html element with language attribute set to Hindi root tag for the HTML document -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Generator</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+    <div class="card">
+        <header class="card-header">
+            <h1>Random <span> Password</span></h1>
+            <p class="subtitle">Secure, memorable and instant — generate with one click.</p>
+        </header>
 
+        <section class="card-body">
+            <div class="display">
+                <input type="text" id="password" placeholder="Click generate to create a password" readonly>
+                <button class="icon-btn" id="copyBtn" title="Copy" aria-label="Copy password">
+                    <img src="images/copy.png" alt="copy">
+                </button>
+            </div>
+
+            <div class="controls">
+                <button class="primary" id="generateBtn">
+                    <img src="images/generate.png" alt="generate"> Generate Password
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="index.js"></script>
+</body>
+</html>
