@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Todo Starter</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:24px;background:#071022;color:#fff}input{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);width:100%}button{padding:8px 10px;border-radius:6px;border:none;background:#6366f1;color:#fff;margin-left:8px}ul{list-style:none;padding-left:0}li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03)}</style>
+</head>
+<body>
+  <h1>Todo Starter</h1>
+  <div style="max-width:640px;background:rgba(255,255,255,0.02);padding:16px;border-radius:10px">
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input id="text" placeholder="Add a task" />
+      <button id="add">Add</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    const list = document.getElementById('list');
+    const input = document.getElementById('text');
+    document.getElementById('add').addEventListener('click', addItem);
+    input.addEventListener('keydown', e => { if(e.key==='Enter') addItem(); });
+
+    function addItem(){
+      const v = input.value.trim();
+      if(!v) return; const li = document.createElement('li'); const cb = document.createElement('input'); cb.type='checkbox'; cb.style.marginRight='8px';
+      const span = document.createElement('span'); span.textContent = v; li.appendChild(cb); li.appendChild(span);
+      const del = document.createElement('button'); del.textContent='✕'; del.style.marginLeft='12px'; del.style.background='transparent'; del.style.border='none'; del.style.color='#9aa0b4'; del.addEventListener('click', ()=>li.remove());
+      li.appendChild(del);
+      list.appendChild(li);
+      input.value='';
+    }
+  </script>
+</body>
+</html>

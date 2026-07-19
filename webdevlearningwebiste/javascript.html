@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript — devcraft Learning Path</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/javascript.css"/>
+</head>
+<body class="inner-page">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;devcraft/&gt;</span>
+      </a>
+      <div class="nav-links">
+        <a href="playground.html">Playground</a>
+        <a href="visualizer.html">Visualizer</a>
+        <a href="bitwise.html">Lab</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="git.html">Community</a>
+      </div>
+      <button id="theme-toggle" class="btn-icon" aria-label="Switch to light mode">🌙</button>
+      <a href="playground.html" class="nav-cta">Start Free →</a>
+    </div>
+  </nav>
+
+  <!-- Progress Bar -->
+  <div class="curriculum-progress">
+    <div class="progress-track">
+      <div class="progress-fill" id="curriculum-progress-fill"></div>
+    </div>
+    <div class="progress-stats">
+      <span id="progress-text">0% Complete</span>
+      <span id="progress-fraction">0 / 11 sections</span>
+    </div>
+  </div>
+
+  <main id="main-content" class="container curriculum-container" role="main" aria-labelledby="hero-title">
+
+    <!-- Hero -->
+    <div class="js-hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-badges">
+            <span class="badge-pill">⚡ 10 Modules</span>
+            <span class="badge-pill">🛠️ 3 Projects</span>
+            <span class="badge-pill">⏱️ 45 min read</span>
+          </div>
+          <h1 id="hero-title" class="hero-title">Master Modern <span class="gradient-text">JavaScript</span></h1>
+          <p class="hero-sub">A hands-on, project-driven curriculum. Build real features, ship projects, and master modern JavaScript patterns — all inside the browser.</p>
+          <ul class="hero-benefits">
+            <li><span class="benefit-check">✓</span> Build interactive UIs & small apps</li>
+            <li><span class="benefit-check">✓</span> Master async patterns & APIs</li>
+            <li><span class="benefit-check">✓</span> Ship real projects with confidence</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="#why-js" class="btn-primary btn-lg">Start Learning</a>
+            <a href="quiz.html" class="btn-secondary">Take the Quiz</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="feature-card hero-code-card">
+            <div class="code-header">
+              <span class="code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </span>
+              <span class="code-filename">hello.js</span>
+              <button class="code-copy-btn" data-copy="const name = 'devcraft';\nconsole.log(`Hello, ${name}!`);" aria-label="Copy code">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+            <pre class="example"><code><span class="tok-kw">const</span> <span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">'devcraft'</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-str">`Hello, <span class="tok-tpl">${</span><span class="tok-var">name</span><span class="tok-tpl">}</span>!`</span><span class="tok-punc">)</span><span class="tok-punc">;</span></code></pre>
+            <div class="code-actions">
+              <a class="btn-sm btn-primary" href="playground.html#lang=javascript&code=const%20name%20%3D%20'devcraft'%3B%0Aconsole.log(%60Hello%2C%20%24%7Bname%7D!%60)%3B" target="_blank" rel="noopener noreferrer">▶ Run in Playground</a>
+              <button type="button" class="btn-sm btn-secondary js-copy-btn" data-copy="const name = 'devcraft';\nconsole.log(`Hello, ${name}!`);">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="curriculum-layout">
+      <!-- Main Content -->
+      <div class="curriculum-main">
+        <div class="section-label">— Curriculum Outline —</div>
+
+        <!-- Section 1: Why JavaScript Exists -->
+        <section id="why-js" class="lesson-card" data-section="why-js">
+          <div class="lesson-header">
+            <div class="lesson-number">01</div>
+            <div class="lesson-meta">
+              <h2>Why JavaScript Exists</h2>
+              <p class="lesson-desc">The story of Netscape, Sun, and the ten-day miracle that changed the web.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="why-js" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>In the early 1990s, a web page was a static document. It could show text and images, and that was essentially all. There was no way for a page to react to you. If you filled in a form and made a mistake, the page could not tell you on the spot. It had to ship your data all the way to a distant server and wait for the server to send back a reply just to say "that's wrong, try again."</p>
+            <p>Netscape — makers of the dominant browser of the era — realised the web needed to come alive. It needed to respond instantly, right there in the page. That need is the seed of everything that follows.</p>
+
+            <h3>The Players</h3>
+            <div class="info-cards-row">
+              <div class="info-card-compact">
+                <div class="info-icon">🌐</div>
+                <h4>Netscape</h4>
+                <p>Dominant browser maker (1990s). Wanted the web to "come alive."</p>
+              </div>
+              <div class="info-card-compact">
+                <div class="info-icon">☕</div>
+                <h4>Sun Microsystems</h4>
+                <p>Created Java, sold internet servers. Wanted Java in the browser.</p>
+              </div>
+              <div class="info-card-compact">
+                <div class="info-icon">🪟</div>
+                <h4>Microsoft</h4>
+                <p>The common enemy. Everyone needed Windows to run software.</p>
+              </div>
+            </div>
+
+            <h3>Java vs JavaScript</h3>
+            <div class="comparison-table">
+              <div class="table-row table-header">
+                <div class="table-cell">Java (Component)</div>
+                <div class="table-cell">JavaScript (Glue)</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Powerful, professional</div>
+                <div class="table-cell">Light, simple, forgiving</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Ran in sealed applet</div>
+                <div class="table-cell">Woven into the page itself</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Needed plugin + slow startup</div>
+                <div class="table-cell">Built-in, instant execution</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Removed from browsers ~2015</div>
+                <div class="table-cell">Became the language of the web</div>
+              </div>
+            </div>
+
+            <h3>The Ten-Day Miracle</h3>
+            <p>Netscape hired <strong>Brendan Eich</strong> in May 1995. Marketing demanded the new language <em>look like Java</em> to ride Java's popularity. Eich built the prototype in roughly <strong>ten days</strong>. The name "JavaScript" was pure marketing — the two languages are as related as "car" and "carpet."</p>
+
+            <h3>Why Not C++?</h3>
+            <div class="danger-list">
+              <div class="danger-item">
+                <span class="danger-num">1</span>
+                <div><strong>Too heavy</strong> — 1995 PCs had 4-8 MB RAM, 200-400 MB hard disks</div>
+              </div>
+              <div class="danger-item">
+                <span class="danger-num">2</span>
+                <div><strong>Security nightmare</strong> — unrestricted file access, raw memory pointers, system() calls</div>
+              </div>
+              <div class="danger-item">
+                <span class="danger-num">3</span>
+                <div><strong>Wrong audience</strong> — web designers, not kernel developers</div>
+              </div>
+              <div class="danger-item">
+                <span class="danger-num">4</span>
+                <div><strong>No garbage collection</strong> — manual memory management error-prone</div>
+              </div>
+            </div>
+
+            <h3>Modern Parallel: WebAssembly</h3>
+            <p>WebAssembly lets C++/Rust run in browser at near-native speed. But just like Java in 1995, it <strong>cannot touch the page</strong>. It must call out to JavaScript for DOM manipulation. The "glue" role of JavaScript never changed.</p>
+
+            <div class="tip-box">
+              <div class="tip-icon">💡</div>
+              <div><strong>Takeaway:</strong> JavaScript owns the browser tab. It won by being woven into the page, already there, ready to run.</div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#vars-scope" class="nav-next">Next: Variables & Scope →</a>
+          </div>
+        </section>
+
+        <!-- Section 2: Variables & Scope -->
+        <section id="vars-scope" class="lesson-card" data-section="vars-scope">
+          <div class="lesson-header">
+            <div class="lesson-number">02</div>
+            <div class="lesson-meta">
+              <h2>Variables & Scope</h2>
+              <p class="lesson-desc">const, let, var — and why the choice matters more than you think.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="vars-scope" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Variables are named containers that hold values. JavaScript provides three ways to declare variables — <code>const</code>, <code>let</code>, and <code>var</code>. Choose <code>const</code> by default, use <code>let</code> when you need to reassign, and avoid <code>var</code> in modern code.</p>
+
+            <h3>The Three Declarations</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Feature</div>
+                <div class="table-cell">var</div>
+                <div class="table-cell">let</div>
+                <div class="table-cell">const</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Scope</div>
+                <div class="table-cell">Function</div>
+                <div class="table-cell">Block</div>
+                <div class="table-cell">Block</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Reassignable</div>
+                <div class="table-cell">Yes</div>
+                <div class="table-cell">Yes</div>
+                <div class="table-cell"><strong class="text-red">No</strong></div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Redeclarable</div>
+                <div class="table-cell">Yes</div>
+                <div class="table-cell">No</div>
+                <div class="table-cell">No</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Hoisted Value</div>
+                <div class="table-cell">undefined</div>
+                <div class="table-cell">Uninitialized (TDZ)</div>
+                <div class="table-cell">Uninitialized (TDZ)</div>
+              </div>
+              <div class="table-row highlight-row">
+                <div class="table-cell">Modern Practice</div>
+                <div class="table-cell"><span class="tag-bad">Avoid</span></div>
+                <div class="table-cell"><span class="tag-ok">Use for reassignable</span></div>
+                <div class="table-cell"><span class="tag-good">Use as default</span></div>
+              </div>
+            </div>
+
+            <h3>const — Default Choice</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">const-demo.js</span>
+                <button class="code-copy-btn" data-copy="const PI = 3.14159;\n// PI = 3.14; // TypeError: Assignment to constant variable\n\nconst CONFIG = { port: 8080 };\nCONFIG.port = 3000; // Allowed! Object properties mutable" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">const</span> <span class="tok-var">PI</span> <span class="tok-op">=</span> <span class="tok-num">3.14159</span><span class="tok-punc">;</span>
+<span class="tok-comment">// PI = 3.14; // TypeError: Assignment to constant variable</span>
+
+<span class="tok-kw">const</span> <span class="tok-var">CONFIG</span> <span class="tok-op">=</span> <span class="tok-punc">{</span> <span class="tok-prop">port</span><span class="tok-op">:</span> <span class="tok-num">8080</span> <span class="tok-punc">}</span><span class="tok-punc">;</span>
+<span class="tok-var">CONFIG</span><span class="tok-punc">.</span><span class="tok-prop">port</span> <span class="tok-op">=</span> <span class="tok-num">3000</span><span class="tok-punc">;</span> <span class="tok-comment">// Allowed! Object properties mutable</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="const PI = 3.14159;\n// PI = 3.14; // TypeError: Assignment to constant variable\n\nconst CONFIG = { port: 8080 };\nCONFIG.port = 3000; // Allowed! Object properties mutable">Copy</button>
+              </div>
+            </div>
+
+            <h3>let — When Reassignment Needed</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">let-demo.js</span>
+                <button class="code-copy-btn" data-copy="let counter = 0;\ncounter = 1; // Allowed\n\nlet name; // Allowed, defaults to undefined\nname = &quot;Alice&quot;;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">counter</span> <span class="tok-op">=</span> <span class="tok-num">0</span><span class="tok-punc">;</span>
+<span class="tok-var">counter</span> <span class="tok-op">=</span> <span class="tok-num">1</span><span class="tok-punc">;</span> <span class="tok-comment">// Allowed</span>
+
+<span class="tok-kw">let</span> <span class="tok-var">name</span><span class="tok-punc">;</span> <span class="tok-comment">// Allowed, defaults to undefined</span>
+<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"Alice"</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let counter = 0;\ncounter = 1; // Allowed\n\nlet name; // Allowed, defaults to undefined\nname = 'Alice';">Copy</button>
+              </div>
+            </div>
+
+            <h3>var — Legacy Trap</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">var-trap.js</span>
+                <button class="code-copy-btn" data-copy="if (true) {\n  var leak = &quot;I escape blocks!&quot;;\n}\nconsole.log(leak); // &quot;I escape blocks!&quot; — function scope\n\n// Hoisting quirk\nconsole.log(myVar); // undefined (no error!)\nvar myVar = &quot;Hello&quot;;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-kw">true</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-kw">var</span> <span class="tok-var">leak</span> <span class="tok-op">=</span> <span class="tok-str">"I escape blocks!"</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">leak</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// "I escape blocks!" — function scope</span>
+
+<span class="tok-comment">// Hoisting quirk</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">myVar</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// undefined (no error!)</span>
+<span class="tok-kw">var</span> <span class="tok-var">myVar</span> <span class="tok-op">=</span> <span class="tok-str">"Hello"</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="if (true) {\n  var leak = 'I escape blocks!';\n}\nconsole.log(leak); // 'I escape blocks!' — function scope\n\n// Hoisting quirk\nconsole.log(myVar); // undefined (no error!)\nvar myVar = 'Hello';">Copy</button>
+              </div>
+            </div>
+
+            <h3>Temporal Dead Zone (TDZ)</h3>
+            <p><code>let</code> and <code>const</code> are hoisted but <strong>not initialized</strong>. Accessing them before declaration throws a <code>ReferenceError</code>.</p>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">tdz.js</span>
+                <button class="code-copy-btn" data-copy="// var is hoisted\nconsole.log(a); // undefined\nvar a = 10;\n\n// let/const are TDZ\nconsole.log(b); // ReferenceError\nlet b = 5;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-comment">// var is hoisted</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">a</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// undefined</span>
+<span class="tok-kw">var</span> <span class="tok-var">a</span> <span class="tok-op">=</span> <span class="tok-num">10</span><span class="tok-punc">;</span>
+
+<span class="tok-comment">// let/const are TDZ</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">b</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// ReferenceError</span>
+<span class="tok-kw">let</span> <span class="tok-var">b</span> <span class="tok-op">=</span> <span class="tok-num">5</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="// var is hoisted\nconsole.log(a); // undefined\nvar a = 10;\n\n// let/const are TDZ\nconsole.log(b); // ReferenceError\nlet b = 5;">Copy</button>
+              </div>
+            </div>
+
+            <h3>Block vs Function Scope</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">scope.js</span>
+                <button class="code-copy-btn" data-copy="if (true) {\n  var fnScope = 'I escape blocks (function scope)';\n  let blockScope = 'I stay inside the block';\n}\nconsole.log(fnScope);    // 'I escape blocks (function scope)'\n// console.log(blockScope); // ReferenceError" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-kw">true</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-kw">var</span> <span class="tok-var">fnScope</span> <span class="tok-op">=</span> <span class="tok-str">'I escape blocks (function scope)'</span><span class="tok-punc">;</span>
+  <span class="tok-kw">let</span> <span class="tok-var">blockScope</span> <span class="tok-op">=</span> <span class="tok-str">'I stay inside the block'</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">fnScope</span><span class="tok-punc">)</span><span class="tok-punc">;</span>    <span class="tok-comment">// 'I escape blocks (function scope)'</span>
+<span class="tok-comment">// console.log(blockScope); // ReferenceError</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="if (true) {\n  var fnScope = 'I escape blocks (function scope)';\n  let blockScope = 'I stay inside the block';\n}\nconsole.log(fnScope);    // 'I escape blocks (function scope)'\n// console.log(blockScope); // ReferenceError">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#why-js" class="nav-prev">← Prev: Why JavaScript</a>
+            <a href="#types" class="nav-next">Next: Data Types →</a>
+          </div>
+        </section>
+
+        <!-- Section 3: Data Types -->
+        <section id="types" class="lesson-card" data-section="types">
+          <div class="lesson-header">
+            <div class="lesson-number">03</div>
+            <div class="lesson-meta">
+              <h2>Data Types</h2>
+              <p class="lesson-desc">Primitives vs Objects, value vs reference, and the typeof quirks.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="types" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Computer memory is just bytes. <code>01001000</code> could be the number 72, the character 'H', a memory address, or a boolean true. <strong>Data types</strong> tell the computer how many bytes to use and what operations make sense.</p>
+            <p>JavaScript is <strong>dynamically typed</strong>: variables hold any type, figured out at runtime.</p>
+
+            <h3>Primitive Types (7) — Immutable, Stored by Value</h3>
+            <div class="primitive-grid">
+              <div class="primitive-card">
+                <div class="primitive-type">string</div>
+                <div class="primitive-desc">Textual data</div>
+                <code class="primitive-ex">"hello"</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">number</div>
+                <div class="primitive-desc">Integers & floats</div>
+                <code class="primitive-ex">42, 3.14, NaN</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">boolean</div>
+                <div class="primitive-desc">Logical true/false</div>
+                <code class="primitive-ex">true, false</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">undefined</div>
+                <div class="primitive-desc">Unintentional absence</div>
+                <code class="primitive-ex">variable declared</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">null</div>
+                <div class="primitive-desc">Intentional absence</div>
+                <code class="primitive-ex">explicit "nothing"</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">bigint</div>
+                <div class="primitive-desc">Huge integers</div>
+                <code class="primitive-ex">9007199254740991n</code>
+              </div>
+              <div class="primitive-card">
+                <div class="primitive-type">symbol</div>
+                <div class="primitive-desc">Unique identifier</div>
+                <code class="primitive-ex">Symbol('id')</code>
+              </div>
+            </div>
+
+            <h3>null vs undefined</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">null-vs-undefined.js</span>
+                <button class="code-copy-btn" data-copy="let user;           // undefined — engine's emptiness\nlet data = null;    // null — your intentional emptiness" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">user</span><span class="tok-punc">;</span>           <span class="tok-comment">// undefined — engine's emptiness</span>
+<span class="tok-kw">let</span> <span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-kw">null</span><span class="tok-punc">;</span>    <span class="tok-comment">// null — your intentional emptiness</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let user;           // undefined — engine's emptiness\nlet data = null;    // null — your intentional emptiness">Copy</button>
+              </div>
+            </div>
+
+            <h3>typeof Operator</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">typeof.js</span>
+                <button class="code-copy-btn" data-copy="typeof &quot;hello&quot;      // &quot;string&quot;\ntypeof 42           // &quot;number&quot;\ntypeof true         // &quot;boolean&quot;\ntypeof undefined    // &quot;undefined&quot;\ntypeof 10n          // &quot;bigint&quot;\ntypeof Symbol()     // &quot;symbol&quot;\ntypeof {}           // &quot;object&quot;\ntypeof []           // &quot;object&quot; (arrays are objects)\ntypeof function(){} // &quot;function&quot; (special case)\ntypeof null         // &quot;object&quot; — famous historical bug" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">typeof</span> <span class="tok-str">"hello"</span>      <span class="tok-comment">// "string"</span>
+<span class="tok-kw">typeof</span> <span class="tok-num">42</span>           <span class="tok-comment">// "number"</span>
+<span class="tok-kw">typeof</span> <span class="tok-kw">true</span>         <span class="tok-comment">// "boolean"</span>
+<span class="tok-kw">typeof</span> <span class="tok-kw">undefined</span>    <span class="tok-comment">// "undefined"</span>
+<span class="tok-kw">typeof</span> <span class="tok-num">10n</span>          <span class="tok-comment">// "bigint"</span>
+<span class="tok-kw">typeof</span> <span class="tok-func">Symbol</span><span class="tok-punc">(</span><span class="tok-punc">)</span>     <span class="tok-comment">// "symbol"</span>
+<span class="tok-kw">typeof</span> <span class="tok-punc">{</span><span class="tok-punc">}</span>           <span class="tok-comment">// "object"</span>
+<span class="tok-kw">typeof</span> <span class="tok-punc">[</span><span class="tok-punc">]</span>           <span class="tok-comment">// "object" (arrays are objects)</span>
+<span class="tok-kw">typeof</span> <span class="tok-kw">function</span><span class="tok-punc">(</span><span class="tok-punc">)</span><span class="tok-punc">{</span><span class="tok-punc">}</span> <span class="tok-comment">// "function" (special case)</span>
+<span class="tok-kw">typeof</span> <span class="tok-kw">null</span>         <span class="tok-comment">// "object" — famous historical bug</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="typeof 'hello'      // 'string'\ntypeof 42           // 'number'\ntypeof true         // 'boolean'\ntypeof undefined    // 'undefined'\ntypeof 10n          // 'bigint'\ntypeof Symbol()     // 'symbol'\ntypeof {}           // 'object'\ntypeof []           // 'object' (arrays are objects)\ntypeof function(){} // 'function' (special case)\ntypeof null         // 'object' — famous historical bug">Copy</button>
+              </div>
+            </div>
+
+            <h3>Object Type — Mutable, Stored by Reference</h3>
+            <p>Includes: <code>{}</code>, <code>[]</code>, <code>function</code>, <code>Date</code>, <code>RegExp</code>, <code>Map</code>, <code>Set</code></p>
+
+            <h3>Value vs Reference</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">value-vs-reference.js</span>
+                <button class="code-copy-btn" data-copy="// Primitives — copied by VALUE\nlet a = 10;\nlet b = a;     // 10 is copied into b\nb = 20;\nconsole.log(a); // 10 — unchanged\n\n// Objects — copied by REFERENCE\nlet obj1 = { value: 10 };\nlet obj2 = obj1;  // Memory address copied\nobj2.value = 20;\nconsole.log(obj1.value); // 20 — same object in memory!" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-comment">// Primitives — copied by VALUE</span>
+<span class="tok-kw">let</span> <span class="tok-var">a</span> <span class="tok-op">=</span> <span class="tok-num">10</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">b</span> <span class="tok-op">=</span> <span class="tok-var">a</span><span class="tok-punc">;</span>     <span class="tok-comment">// 10 is copied into b</span>
+<span class="tok-var">b</span> <span class="tok-op">=</span> <span class="tok-num">20</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">a</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// 10 — unchanged</span>
+
+<span class="tok-comment">// Objects — copied by REFERENCE</span>
+<span class="tok-kw">let</span> <span class="tok-var">obj1</span> <span class="tok-op">=</span> <span class="tok-punc">{</span> <span class="tok-prop">value</span><span class="tok-op">:</span> <span class="tok-num">10</span> <span class="tok-punc">}</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">obj2</span> <span class="tok-op">=</span> <span class="tok-var">obj1</span><span class="tok-punc">;</span>  <span class="tok-comment">// Memory address copied</span>
+<span class="tok-var">obj2</span><span class="tok-punc">.</span><span class="tok-prop">value</span> <span class="tok-op">=</span> <span class="tok-num">20</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">obj1</span><span class="tok-punc">.</span><span class="tok-prop">value</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// 20 — same object in memory!</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="// Primitives — copied by VALUE\nlet a = 10;\nlet b = a;     // 10 is copied into b\nb = 20;\nconsole.log(a); // 10 — unchanged\n\n// Objects — copied by REFERENCE\nlet obj1 = { value: 10 };\nlet obj2 = obj1;  // Memory address copied\nobj2.value = 20;\nconsole.log(obj1.value); // 20 — same object in memory!">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#vars-scope" class="nav-prev">← Prev: Variables</a>
+            <a href="#operators" class="nav-next">Next: Operators →</a>
+          </div>
+        </section>
+
+        <!-- Section 4: Operators -->
+        <section id="operators" class="lesson-card" data-section="operators">
+          <div class="lesson-header">
+            <div class="lesson-number">04</div>
+            <div class="lesson-meta">
+              <h2>Operators</h2>
+              <p class="lesson-desc">Assignment, arithmetic, comparison, logical, and bitwise.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="operators" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Operators perform computations, comparisons, and assignments. Use strict equality (<code>===</code>) instead of loose equality (<code>==</code>).</p>
+
+            <h3>Assignment Operators</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">assignment.js</span>
+                <button class="code-copy-btn" data-copy="let score = 100;\nscore += 5;   // score = score + 5  → 105\nscore *= 2;   // score = score * 2  → 210\nscore **= 2;  // score = score ** 2 → 44100" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-num">100</span><span class="tok-punc">;</span>
+<span class="tok-var">score</span> <span class="tok-op">+=</span> <span class="tok-num">5</span><span class="tok-punc">;</span>   <span class="tok-comment">// score = score + 5  → 105</span>
+<span class="tok-var">score</span> <span class="tok-op">*=</span> <span class="tok-num">2</span><span class="tok-punc">;</span>   <span class="tok-comment">// score = score * 2  → 210</span>
+<span class="tok-var">score</span> <span class="tok-op">**=</span> <span class="tok-num">2</span><span class="tok-punc">;</span>  <span class="tok-comment">// score = score ** 2 → 44100</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let score = 100;\nscore += 5;   // score = score + 5  → 105\nscore *= 2;   // score = score * 2  → 210\nscore **= 2;  // score = score ** 2 → 44100">Copy</button>
+              </div>
+            </div>
+
+            <h3>Arithmetic Operators</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Operator</div>
+                <div class="table-cell">Name</div>
+                <div class="table-cell">Example</div>
+              </div>
+              <div class="table-row"><div class="table-cell">+</div><div class="table-cell">Addition</div><div class="table-cell">5 + 3 = 8</div></div>
+              <div class="table-row"><div class="table-cell">-</div><div class="table-cell">Subtraction</div><div class="table-cell">5 - 3 = 2</div></div>
+              <div class="table-row"><div class="table-cell">*</div><div class="table-cell">Multiplication</div><div class="table-cell">5 * 3 = 15</div></div>
+              <div class="table-row"><div class="table-cell">/</div><div class="table-cell">Division</div><div class="table-cell">5 / 2 = 2.5</div></div>
+              <div class="table-row"><div class="table-cell">**</div><div class="table-cell">Exponentiation</div><div class="table-cell">2 ** 3 = 8</div></div>
+              <div class="table-row"><div class="table-cell">%</div><div class="table-cell">Remainder</div><div class="table-cell">10 % 3 = 1</div></div>
+            </div>
+
+            <h3>Increment / Decrement Gotcha</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">increment.js</span>
+                <button class="code-copy-btn" data-copy="let postfix = 5;\nconsole.log(postfix++); // Prints 5, THEN becomes 6\nconsole.log(postfix);     // 6\n\nlet prefix = 5;\nconsole.log(++prefix);    // Becomes 6 FIRST, then prints 6" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">postfix</span> <span class="tok-op">=</span> <span class="tok-num">5</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">postfix</span><span class="tok-op">++</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// Prints 5, THEN becomes 6</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">postfix</span><span class="tok-punc">)</span><span class="tok-punc">;</span>     <span class="tok-comment">// 6</span>
+
+<span class="tok-kw">let</span> <span class="tok-var">prefix</span> <span class="tok-op">=</span> <span class="tok-num">5</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-op">++</span><span class="tok-var">prefix</span><span class="tok-punc">)</span><span class="tok-punc">;</span>    <span class="tok-comment">// Becomes 6 FIRST, then prints 6</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let postfix = 5;\nconsole.log(postfix++); // Prints 5, THEN becomes 6\nconsole.log(postfix);     // 6\n\nlet prefix = 5;\nconsole.log(++prefix);    // Becomes 6 FIRST, then prints 6">Copy</button>
+              </div>
+            </div>
+
+            <h3>Comparison Operators — ALWAYS use === and !==</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">comparison.js</span>
+                <button class="code-copy-btn" data-copy="7 == &quot;7&quot;     // true  — &quot;7&quot; coerced to number 7\n7 === &quot;7&quot;    // false — different types\n0 == false   // true  — false coerced to 0\n0 === false  // false — different types\nnull == undefined  // true  — special case\nnull === undefined // false — correct" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-num">7</span> <span class="tok-op">==</span> <span class="tok-str">"7"</span>     <span class="tok-comment">// true  — "7" coerced to number 7</span>
+<span class="tok-num">7</span> <span class="tok-op">===</span> <span class="tok-str">"7"</span>    <span class="tok-comment">// false — different types</span>
+<span class="tok-num">0</span> <span class="tok-op">==</span> <span class="tok-kw">false</span>   <span class="tok-comment">// true  — false coerced to 0</span>
+<span class="tok-num">0</span> <span class="tok-op">===</span> <span class="tok-kw">false</span>  <span class="tok-comment">// false — different types</span>
+<span class="tok-kw">null</span> <span class="tok-op">==</span> <span class="tok-kw">undefined</span>  <span class="tok-comment">// true  — special case</span>
+<span class="tok-kw">null</span> <span class="tok-op">===</span> <span class="tok-kw">undefined</span> <span class="tok-comment">// false — correct</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="7 == '7'     // true  — '7' coerced to number 7\n7 === '7'    // false — different types\n0 == false   // true  — false coerced to 0\n0 === false  // false — different types\nnull == undefined  // true  — special case\nnull === undefined // false — correct">Copy</button>
+              </div>
+            </div>
+
+            <h3>Logical Operators</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">logical.js</span>
+                <button class="code-copy-btn" data-copy="// && stops if left side is false\nlet user = null;\nif (user && user.name === &quot;Admin&quot;) { /* safe */ }\n\n// || stops if left side is true — great for defaults\nlet username = &quot;&quot;;\nlet displayName = username || &quot;Guest&quot;; // &quot;Guest&quot;\n\n// ! inverts\n!true         // false" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-comment">// && stops if left side is false</span>
+<span class="tok-kw">let</span> <span class="tok-var">user</span> <span class="tok-op">=</span> <span class="tok-kw">null</span><span class="tok-punc">;</span>
+<span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-var">user</span> <span class="tok-op">&&</span> <span class="tok-var">user</span><span class="tok-punc">.</span><span class="tok-prop">name</span> <span class="tok-op">===</span> <span class="tok-str">"Admin"</span><span class="tok-punc">)</span> <span class="tok-punc">{</span> <span class="tok-comment">/* safe */</span> <span class="tok-punc">}</span>
+
+<span class="tok-comment">// || stops if left side is true — great for defaults</span>
+<span class="tok-kw">let</span> <span class="tok-var">username</span> <span class="tok-op">=</span> <span class="tok-str">""</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">displayName</span> <span class="tok-op">=</span> <span class="tok-var">username</span> <span class="tok-op">||</span> <span class="tok-str">"Guest"</span><span class="tok-punc">;</span> <span class="tok-comment">// "Guest"</span>
+
+<span class="tok-comment">// ! inverts</span>
+<span class="tok-op">!</span><span class="tok-kw">true</span>         <span class="tok-comment">// false</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="// && stops if left side is false\nlet user = null;\nif (user && user.name === 'Admin') { /* safe */ }\n\n// || stops if left side is true — great for defaults\nlet username = '';\nlet displayName = username || 'Guest'; // 'Guest'\n\n// ! inverts\n!true         // false">Copy</button>
+              </div>
+            </div>
+
+            <h3>The 6 Falsy Values</h3>
+            <div class="falsy-grid">
+              <div class="falsy-card">false</div>
+              <div class="falsy-card">0</div>
+              <div class="falsy-card">""</div>
+              <div class="falsy-card">null</div>
+              <div class="falsy-card">undefined</div>
+              <div class="falsy-card">NaN</div>
+            </div>
+            <p class="falsy-note">Everything else is <strong>truthy</strong> — including <code>"false"</code>, <code>[]</code>, <code>{}</code></p>
+
+            <h3>Bitwise Operators</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">bitwise.js</span>
+                <button class="code-copy-btn" data-copy="5 & 3   // 1  (001)\n5 | 3   // 7  (111)\n5 ^ 3   // 6  (110)\n~5      // -6\n5 << 1  // 10 (1010)\n5 >> 1  // 2  (010)" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-num">5</span> <span class="tok-op">&</span> <span class="tok-num">3</span>   <span class="tok-comment">// 1  (001)</span>
+<span class="tok-num">5</span> <span class="tok-op">|</span> <span class="tok-num">3</span>   <span class="tok-comment">// 7  (111)</span>
+<span class="tok-num">5</span> <span class="tok-op">^</span> <span class="tok-num">3</span>   <span class="tok-comment">// 6  (110)</span>
+<span class="tok-op">~</span><span class="tok-num">5</span>      <span class="tok-comment">// -6</span>
+<span class="tok-num">5</span> <span class="tok-op"><<</span> <span class="tok-num">1</span>  <span class="tok-comment">// 10 (1010)</span>
+<span class="tok-num">5</span> <span class="tok-op">>></span> <span class="tok-num">1</span>  <span class="tok-comment">// 2  (010)</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="5 & 3   // 1  (001)\n5 | 3   // 7  (111)\n5 ^ 3   // 6  (110)\n~5      // -6\n5 << 1  // 10 (1010)\n5 >> 1  // 2  (010)">Copy</button>
+              </div>
+            </div>
+
+            <h3>Ternary Operator</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">ternary.js</span>
+                <button class="code-copy-btn" data-copy="let age = 20;\nlet message = (age >= 18) ? &quot;You can vote.&quot; : &quot;You cannot vote yet.&quot;;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">20</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">message</span> <span class="tok-op">=</span> <span class="tok-punc">(</span><span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span><span class="tok-punc">)</span> <span class="tok-op">?</span> <span class="tok-str">"You can vote."</span> <span class="tok-op">:</span> <span class="tok-str">"You cannot vote yet."</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let age = 20;\nlet message = (age >= 18) ? 'You can vote.' : 'You cannot vote yet.';">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#types" class="nav-prev">← Prev: Data Types</a>
+            <a href="#control-flow" class="nav-next">Next: Control Flow →</a>
+          </div>
+        </section>
+
+        <!-- Section 5: Control Flow -->
+        <section id="control-flow" class="lesson-card" data-section="control-flow">
+          <div class="lesson-header">
+            <div class="lesson-number">05</div>
+            <div class="lesson-meta">
+              <h2>Control Flow</h2>
+              <p class="lesson-desc">if/else, for, while, do-while — directing the execution path.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="control-flow" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Control flow determines the order in which statements execute. Use <code>if</code> / <code>else</code> for branching, and loops for repetition.</p>
+
+            <h3>If / Else Chain</h3>
+            <p>Evaluated top-to-bottom. The <strong>first</strong> true condition wins.</p>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">if-else.js</span>
+                <button class="code-copy-btn" data-copy="let score = 85;\n\nif (score >= 90) {\n  grade = 'A';\n} else if (score >= 80) {\n  grade = 'B';        // This runs\n} else if (score >= 70) {\n  grade = 'C';        // Skipped\n} else {\n  grade = 'F';\n}" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-num">85</span><span class="tok-punc">;</span>
+
+<span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-var">score</span> <span class="tok-op">>=</span> <span class="tok-num">90</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">'A'</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span> <span class="tok-kw">else</span> <span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-var">score</span> <span class="tok-op">>=</span> <span class="tok-num">80</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">'B'</span><span class="tok-punc">;</span>        <span class="tok-comment">// This runs</span>
+<span class="tok-punc">}</span> <span class="tok-kw">else</span> <span class="tok-kw">if</span> <span class="tok-punc">(</span><span class="tok-var">score</span> <span class="tok-op">>=</span> <span class="tok-num">70</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">'C'</span><span class="tok-punc">;</span>        <span class="tok-comment">// Skipped</span>
+<span class="tok-punc">}</span> <span class="tok-kw">else</span> <span class="tok-punc">{</span>
+  <span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">'F'</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let score = 85;\n\nif (score >= 90) {\n  grade = 'A';\n} else if (score >= 80) {\n  grade = 'B';        // This runs\n} else if (score >= 70) {\n  grade = 'C';        // Skipped\n} else {\n  grade = 'F';\n}">Copy</button>
+              </div>
+            </div>
+
+            <h3>For Loop — Known iteration count</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">for-loop.js</span>
+                <button class="code-copy-btn" data-copy="for (let i = 1; i <= 5; i++) {\n  console.log(&quot;Repetition:&quot;, i);\n}\n// Output: 1, 2, 3, 4, 5" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">for</span> <span class="tok-punc">(</span><span class="tok-kw">let</span> <span class="tok-var">i</span> <span class="tok-op">=</span> <span class="tok-num">1</span><span class="tok-punc">;</span> <span class="tok-var">i</span> <span class="tok-op"><=</span> <span class="tok-num">5</span><span class="tok-punc">;</span> <span class="tok-var">i</span><span class="tok-op">++</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-str">"Repetition:"</span><span class="tok-punc">,</span> <span class="tok-var">i</span><span class="tok-punc">)</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span>
+<span class="tok-comment">// Output: 1, 2, 3, 4, 5</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="for (let i = 1; i <= 5; i++) {\n  console.log('Repetition:', i);\n}\n// Output: 1, 2, 3, 4, 5">Copy</button>
+              </div>
+            </div>
+
+            <h3>While Loop — Unknown iteration count</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">while.js</span>
+                <button class="code-copy-btn" data-copy="let health = 10;\nwhile (health > 0) {\n  console.log(\`Health: \${health}\`);\n  health -= 3; // MUST change condition or infinite loop!\n}" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">health</span> <span class="tok-op">=</span> <span class="tok-num">10</span><span class="tok-punc">;</span>
+<span class="tok-kw">while</span> <span class="tok-punc">(</span><span class="tok-var">health</span> <span class="tok-op">></span> <span class="tok-num">0</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-str">`Health: <span class="tok-tpl">${</span><span class="tok-var">health</span><span class="tok-tpl">}</span>`</span><span class="tok-punc">)</span><span class="tok-punc">;</span>
+  <span class="tok-var">health</span> <span class="tok-op">-=</span> <span class="tok-num">3</span><span class="tok-punc">;</span> <span class="tok-comment">// MUST change condition or infinite loop!</span>
+<span class="tok-punc">}</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let health = 10;\nwhile (health > 0) {\n  console.log(\`Health: \${health}\`);\n  health -= 3; // MUST change condition or infinite loop!\n}">Copy</button>
+              </div>
+            </div>
+
+            <h3>Do / While — Runs at least once</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">dowhile.js</span>
+                <button class="code-copy-btn" data-copy="let response;\ndo {\n  response = prompt(&quot;Type 'yes' to continue:&quot;);\n} while (response !== &quot;yes&quot;);" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">response</span><span class="tok-punc">;</span>
+<span class="tok-kw">do</span> <span class="tok-punc">{</span>
+  <span class="tok-var">response</span> <span class="tok-op">=</span> <span class="tok-func">prompt</span><span class="tok-punc">(</span><span class="tok-str">"Type 'yes' to continue:"</span><span class="tok-punc">)</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span> <span class="tok-kw">while</span> <span class="tok-punc">(</span><span class="tok-var">response</span> <span class="tok-op">!==</span> <span class="tok-str">"yes"</span><span class="tok-punc">)</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let response;\ndo {\n  response = prompt('Type 'yes' to continue:');\n} while (response !== 'yes');">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#operators" class="nav-prev">← Prev: Operators</a>
+            <a href="#numbers-math" class="nav-next">Next: Numbers & Math →</a>
+          </div>
+        </section>
+
+        <!-- Section 6: Numbers & Math -->
+        <section id="numbers-math" class="lesson-card" data-section="numbers-math">
+          <div class="lesson-header">
+            <div class="lesson-number">06</div>
+            <div class="lesson-meta">
+              <h2>Numbers & Math</h2>
+              <p class="lesson-desc">IEEE-754 floats, the 0.1 + 0.2 bug, and the Math object.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="numbers-math" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>JavaScript uses <strong>IEEE-754 double-precision floats</strong> for the <code>number</code> type. There is no separate integer type — both <code>42</code> and <code>3.14</code> are the same type.</p>
+
+            <h3>The Floating-Point Bug</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">float-bug.js</span>
+                <button class="code-copy-btn" data-copy="0.1 + 0.2 === 0.3     // false\n0.1 + 0.2             // 0.30000000000000004" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-num">0.1</span> <span class="tok-op">+</span> <span class="tok-num">0.2</span> <span class="tok-op">===</span> <span class="tok-num">0.3</span>     <span class="tok-comment">// false</span>
+<span class="tok-num">0.1</span> <span class="tok-op">+</span> <span class="tok-num">0.2</span>             <span class="tok-comment">// 0.30000000000000004</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="0.1 + 0.2 === 0.3     // false\n0.1 + 0.2             // 0.30000000000000004">Copy</button>
+              </div>
+            </div>
+            <p><strong>Why?</strong> 0.1, 0.2, and 0.3 have infinite repeating representations in binary. The computer rounds them to fit 64 bits. Tiny errors accumulate.</p>
+            <div class="tip-box warning">
+              <div class="tip-icon">⚠️</div>
+              <div><strong>Solutions:</strong> Financial calculations use integers (store money in cents). Display with <code>price.toFixed(2)</code>. Comparison checks "close enough" with <code>Number.EPSILON</code>.</div>
+            </div>
+
+            <h3>Special Numeric Values</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Value</div>
+                <div class="table-cell">Source</div>
+              </div>
+              <div class="table-row"><div class="table-cell"><code>Infinity</code></div><div class="table-cell"><code>1 / 0</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>-Infinity</code></div><div class="table-cell"><code>-1 / 0</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>NaN</code></div><div class="table-cell"><code>"hello" / 2</code>, <code>Math.sqrt(-1)</code></div></div>
+            </div>
+            <p><strong>Key Property:</strong> <code>NaN === NaN</code> is <code>false</code>. Always use <code>Number.isNaN(value)</code> to check.</p>
+
+            <h3>Number Methods & Properties</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">number-methods.js</span>
+                <button class="code-copy-btn" data-copy="// Constants\nNumber.MAX_SAFE_INTEGER     // 9007199254740991\nNumber.MIN_SAFE_INTEGER     // -9007199254740991\nNumber.EPSILON              // Smallest representable difference\n\n// Checking\nNumber.isNaN(NaN)           // true\nNumber.isInteger(42)        // true\nNumber.isFinite(100)        // true\n\n// Formatting\n(255).toString(16)          // &quot;ff&quot;\n(3.14159).toFixed(2)        // &quot;3.14&quot;\n(123.456).toPrecision(4)    // &quot;123.5&quot;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-comment">// Constants</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-prop">MAX_SAFE_INTEGER</span>     <span class="tok-comment">// 9007199254740991</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-prop">MIN_SAFE_INTEGER</span>     <span class="tok-comment">// -9007199254740991</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-prop">EPSILON</span>              <span class="tok-comment">// Smallest representable difference</span>
+
+<span class="tok-comment">// Checking</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-func">isNaN</span><span class="tok-punc">(</span><span class="tok-kw">NaN</span><span class="tok-punc">)</span>           <span class="tok-comment">// true</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-func">isInteger</span><span class="tok-punc">(</span><span class="tok-num">42</span><span class="tok-punc">)</span>        <span class="tok-comment">// true</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-func">isFinite</span><span class="tok-punc">(</span><span class="tok-num">100</span><span class="tok-punc">)</span>        <span class="tok-comment">// true</span>
+
+<span class="tok-comment">// Formatting</span>
+<span class="tok-punc">(</span><span class="tok-num">255</span><span class="tok-punc">)</span><span class="tok-punc">.</span><span class="tok-func">toString</span><span class="tok-punc">(</span><span class="tok-num">16</span><span class="tok-punc">)</span>          <span class="tok-comment">// "ff"</span>
+<span class="tok-punc">(</span><span class="tok-num">3.14159</span><span class="tok-punc">)</span><span class="tok-punc">.</span><span class="tok-func">toFixed</span><span class="tok-punc">(</span><span class="tok-num">2</span><span class="tok-punc">)</span>        <span class="tok-comment">// "3.14"</span>
+<span class="tok-punc">(</span><span class="tok-num">123.456</span><span class="tok-punc">)</span><span class="tok-punc">.</span><span class="tok-func">toPrecision</span><span class="tok-punc">(</span><span class="tok-num">4</span><span class="tok-punc">)</span>    <span class="tok-comment">// "123.5"</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="// Constants\nNumber.MAX_SAFE_INTEGER     // 9007199254740991\nNumber.MIN_SAFE_INTEGER     // -9007199254740991\nNumber.EPSILON              // Smallest representable difference\n\n// Checking\nNumber.isNaN(NaN)           // true\nNumber.isInteger(42)        // true\nNumber.isFinite(100)        // true\n\n// Formatting\n(255).toString(16)          // 'ff'\n(3.14159).toFixed(2)        // '3.14'\n(123.456).toPrecision(4)    // '123.5'">Copy</button>
+              </div>
+            </div>
+
+            <h3>The Math Object</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">math.js</span>
+                <button class="code-copy-btn" data-copy="Math.PI              // 3.14159...\nMath.E               // 2.718...\n\n// Rounding\nMath.round(4.7)      // 5\nMath.floor(4.7)      // 4  (down)\nMath.ceil(4.2)       // 5  (up)\nMath.trunc(4.7)      // 4  (remove decimal)\n\n// Other\nMath.abs(-5)         // 5\nMath.pow(2, 3)       // 8\nMath.sqrt(16)        // 4\nMath.max(10, -5, 100)// 100\nMath.min(10, -5, 100)// -5\n\n// Random\nMath.random()        // 0 to 0.999... (never 1)" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-prop">PI</span>              <span class="tok-comment">// 3.14159...</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-prop">E</span>               <span class="tok-comment">// 2.718...</span>
+
+<span class="tok-comment">// Rounding</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">round</span><span class="tok-punc">(</span><span class="tok-num">4.7</span><span class="tok-punc">)</span>      <span class="tok-comment">// 5</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">floor</span><span class="tok-punc">(</span><span class="tok-num">4.7</span><span class="tok-punc">)</span>      <span class="tok-comment">// 4  (down)</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">ceil</span><span class="tok-punc">(</span><span class="tok-num">4.2</span><span class="tok-punc">)</span>       <span class="tok-comment">// 5  (up)</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">trunc</span><span class="tok-punc">(</span><span class="tok-num">4.7</span><span class="tok-punc">)</span>      <span class="tok-comment">// 4  (remove decimal)</span>
+
+<span class="tok-comment">// Other</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">abs</span><span class="tok-punc">(</span><span class="tok-op">-</span><span class="tok-num">5</span><span class="tok-punc">)</span>         <span class="tok-comment">// 5</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">pow</span><span class="tok-punc">(</span><span class="tok-num">2</span><span class="tok-punc">,</span> <span class="tok-num">3</span><span class="tok-punc">)</span>       <span class="tok-comment">// 8</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">sqrt</span><span class="tok-punc">(</span><span class="tok-num">16</span><span class="tok-punc">)</span>        <span class="tok-comment">// 4</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">max</span><span class="tok-punc">(</span><span class="tok-num">10</span><span class="tok-punc">,</span> <span class="tok-op">-</span><span class="tok-num">5</span><span class="tok-punc">,</span> <span class="tok-num">100</span><span class="tok-punc">)</span><span class="tok-comment">// 100</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">min</span><span class="tok-punc">(</span><span class="tok-num">10</span><span class="tok-punc">,</span> <span class="tok-op">-</span><span class="tok-num">5</span><span class="tok-punc">,</span> <span class="tok-num">100</span><span class="tok-punc">)</span><span class="tok-comment">// -5</span>
+
+<span class="tok-comment">// Random</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">random</span><span class="tok-punc">(</span><span class="tok-punc">)</span>        <span class="tok-comment">// 0 to 0.999... (never 1)</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="Math.PI              // 3.14159...\nMath.E               // 2.718...\n\n// Rounding\nMath.round(4.7)      // 5\nMath.floor(4.7)      // 4  (down)\nMath.ceil(4.2)       // 5  (up)\nMath.trunc(4.7)      // 4  (remove decimal)\n\n// Other\nMath.abs(-5)         // 5\nMath.pow(2, 3)       // 8\nMath.sqrt(16)        // 4\nMath.max(10, -5, 100)// 100\nMath.min(10, -5, 100)// -5\n\n// Random\nMath.random()        // 0 to 0.999... (never 1)">Copy</button>
+              </div>
+            </div>
+
+            <h3>Random Integer Formula</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">random-int.js</span>
+                <button class="code-copy-btn" data-copy="function getRandomInt(min, max) {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\ngetRandomInt(1, 10);  // 1 to 10 inclusive\ngetRandomInt(1, 6);   // Dice roll" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">function</span> <span class="tok-func">getRandomInt</span><span class="tok-punc">(</span><span class="tok-var">min</span><span class="tok-punc">,</span> <span class="tok-var">max</span><span class="tok-punc">)</span> <span class="tok-punc">{</span>
+  <span class="tok-kw">return</span> <span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">floor</span><span class="tok-punc">(</span><span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">random</span><span class="tok-punc">(</span><span class="tok-punc">)</span> <span class="tok-op">*</span> <span class="tok-punc">(</span><span class="tok-var">max</span> <span class="tok-op">-</span> <span class="tok-var">min</span> <span class="tok-op">+</span> <span class="tok-num">1</span><span class="tok-punc">)</span><span class="tok-punc">)</span> <span class="tok-op">+</span> <span class="tok-var">min</span><span class="tok-punc">;</span>
+<span class="tok-punc">}</span>
+
+<span class="tok-func">getRandomInt</span><span class="tok-punc">(</span><span class="tok-num">1</span><span class="tok-punc">,</span> <span class="tok-num">10</span><span class="tok-punc">)</span><span class="tok-punc">;</span>  <span class="tok-comment">// 1 to 10 inclusive</span>
+<span class="tok-func">getRandomInt</span><span class="tok-punc">(</span><span class="tok-num">1</span><span class="tok-punc">,</span> <span class="tok-num">6</span><span class="tok-punc">)</span><span class="tok-punc">;</span>   <span class="tok-comment">// Dice roll</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="function getRandomInt(min, max) {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\ngetRandomInt(1, 10);  // 1 to 10 inclusive\ngetRandomInt(1, 6);   // Dice roll">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#control-flow" class="nav-prev">← Prev: Control Flow</a>
+            <a href="#strings" class="nav-next">Next: Strings →</a>
+          </div>
+        </section>
+
+        <!-- Section 7: Strings -->
+        <section id="strings" class="lesson-card" data-section="strings">
+          <div class="lesson-header">
+            <div class="lesson-number">07</div>
+            <div class="lesson-meta">
+              <h2>Strings</h2>
+              <p class="lesson-desc">Immutability, essential methods, and template literals.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="strings" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Strings are <strong>immutable</strong> sequences of characters. Use single quotes, double quotes, or backticks (template literals).</p>
+
+            <h3>Creating Strings</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">strings.js</span>
+                <button class="code-copy-btn" data-copy="let single = 'Hello';\nlet double = &quot;World&quot;;\nlet template = `Hello, ${name}`; // ES6 — most powerful" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">single</span> <span class="tok-op">=</span> <span class="tok-str">'Hello'</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">double</span> <span class="tok-op">=</span> <span class="tok-str">"World"</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">template</span> <span class="tok-op">=</span> <span class="tok-str">`Hello, <span class="tok-tpl">${</span><span class="tok-var">name</span><span class="tok-tpl">}</span>`</span><span class="tok-punc">;</span> <span class="tok-comment">// ES6 — most powerful</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let single = 'Hello';\nlet double = 'World';\nlet template = \`Hello, \${name}\`; // ES6 — most powerful">Copy</button>
+              </div>
+            </div>
+
+            <h3>Core Properties</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">string-props.js</span>
+                <button class="code-copy-btn" data-copy="let text = &quot;JavaScript&quot;;\n// J  a  v  a  S  c  r  i  p  t\n// 0  1  2  3  4  5  6  7  8  9\n\ntext.length              // 10\ntext[0]                  // &quot;J&quot;\ntext[text.length - 1]    // &quot;t&quot; (last character)" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-str">"JavaScript"</span><span class="tok-punc">;</span>
+<span class="tok-comment">// J  a  v  a  S  c  r  i  p  t</span>
+<span class="tok-comment">// 0  1  2  3  4  5  6  7  8  9</span>
+
+<span class="tok-var">text</span><span class="tok-punc">.</span><span class="tok-prop">length</span>              <span class="tok-comment">// 10</span>
+<span class="tok-var">text</span><span class="tok-punc">[</span><span class="tok-num">0</span><span class="tok-punc">]</span>                  <span class="tok-comment">// "J"</span>
+<span class="tok-var">text</span><span class="tok-punc">[</span><span class="tok-var">text</span><span class="tok-punc">.</span><span class="tok-prop">length</span> <span class="tok-op">-</span> <span class="tok-num">1</span><span class="tok-punc">]</span>    <span class="tok-comment">// "t" (last character)</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let text = 'JavaScript';\n// J  a  v  a  S  c  r  i  p  t\n// 0  1  2  3  4  5  6  7  8  9\n\ntext.length              // 10\ntext[0]                  // 'J'\ntext[text.length - 1]    // 't' (last character)">Copy</button>
+              </div>
+            </div>
+
+            <h3>Golden Rule: Immutable</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">immutable.js</span>
+                <button class="code-copy-btn" data-copy="let name = &quot;alex&quot;;\nname[0] = &quot;A&quot;;           // Fails silently — does nothing\nname.toUpperCase();      // Returns &quot;ALEX&quot; (new string)\nconsole.log(name);       // &quot;alex&quot; — original unchanged!" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"alex"</span><span class="tok-punc">;</span>
+<span class="tok-var">name</span><span class="tok-punc">[</span><span class="tok-num">0</span><span class="tok-punc">]</span> <span class="tok-op">=</span> <span class="tok-str">"A"</span><span class="tok-punc">;</span>           <span class="tok-comment">// Fails silently — does nothing</span>
+<span class="tok-var">name</span><span class="tok-punc">.</span><span class="tok-func">toUpperCase</span><span class="tok-punc">(</span><span class="tok-punc">)</span><span class="tok-punc">;</span>      <span class="tok-comment">// Returns "ALEX" (new string)</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">name</span><span class="tok-punc">)</span><span class="tok-punc">;</span>       <span class="tok-comment">// "alex" — original unchanged!</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let name = 'alex';\nname[0] = 'A';           // Fails silently — does nothing\nname.toUpperCase();      // Returns 'ALEX' (new string)\nconsole.log(name);       // 'alex' — original unchanged!">Copy</button>
+              </div>
+            </div>
+
+            <h3>Essential String Methods</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Method</div>
+                <div class="table-cell">Purpose</div>
+                <div class="table-cell">Example</div>
+              </div>
+              <div class="table-row"><div class="table-cell"><code>.toUpperCase()</code></div><div class="table-cell">All caps</div><div class="table-cell"><code>"hi" → "HI"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.toLowerCase()</code></div><div class="table-cell">All lowercase</div><div class="table-cell"><code>"HI" → "hi"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.indexOf(sub)</code></div><div class="table-cell">First position</div><div class="table-cell"><code>"hello".indexOf("l") → 2</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.includes(sub)</code></div><div class="table-cell">Boolean check</div><div class="table-cell"><code>"hello".includes("ll") → true</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.slice(start, end)</code></div><div class="table-cell">Extract substring</div><div class="table-cell"><code>"JS".slice(0,4) → "Java"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.replace(old, new)</code></div><div class="table-cell">Replace first</div><div class="table-cell"><code>"a b a".replace("a","x") → "x b a"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.replaceAll(old, new)</code></div><div class="table-cell">Replace all</div><div class="table-cell"><code>"a b a".replaceAll("a","x") → "x b x"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.trim()</code></div><div class="table-cell">Remove whitespace</div><div class="table-cell"><code>"  hi  ".trim() → "hi"</code></div></div>
+              <div class="table-row"><div class="table-cell"><code>.split(sep)</code></div><div class="table-cell">Split to array</div><div class="table-cell"><code>"a,b,c".split(",") → ["a","b","c"]</code></div></div>
+            </div>
+
+            <h3>Template Literals (ES6)</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">template-literals.js</span>
+                <button class="code-copy-btn" data-copy="let name = &quot;Alice&quot;;\nlet age = 30;\n\n// Old way (concatenation)\nlet old = &quot;Hello, my name is &quot; + name + &quot; and I am &quot; + age + &quot;.&quot;;\n\n// New way (template literal)\nlet message = `Hello, my name is ${name} and I am ${age}.`;\nlet future = `Next year I will be ${age + 1}.`;\n\n// Multi-line\nlet html = `\n  <div>\n    <p>Hello</p>\n  </div>\n`;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">let</span> <span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"Alice"</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">30</span><span class="tok-punc">;</span>
+
+<span class="tok-comment">// Old way (concatenation)</span>
+<span class="tok-kw">let</span> <span class="tok-var">old</span> <span class="tok-op">=</span> <span class="tok-str">"Hello, my name is "</span> <span class="tok-op">+</span> <span class="tok-var">name</span> <span class="tok-op">+</span> <span class="tok-str">" and I am "</span> <span class="tok-op">+</span> <span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-str">"."</span><span class="tok-punc">;</span>
+
+<span class="tok-comment">// New way (template literal)</span>
+<span class="tok-kw">let</span> <span class="tok-var">message</span> <span class="tok-op">=</span> <span class="tok-str">`Hello, my name is <span class="tok-tpl">${</span><span class="tok-var">name</span><span class="tok-tpl">}</span> and I am <span class="tok-tpl">${</span><span class="tok-var">age</span><span class="tok-tpl">}</span>.`</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">future</span> <span class="tok-op">=</span> <span class="tok-str">`Next year I will be <span class="tok-tpl">${</span><span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-num">1</span><span class="tok-tpl">}</span>.`</span><span class="tok-punc">;</span>
+
+<span class="tok-comment">// Multi-line</span>
+<span class="tok-kw">let</span> <span class="tok-var">html</span> <span class="tok-op">=</span> <span class="tok-str">`
+  <div>
+    <p>Hello</p>
+  </div>
+`</span><span class="tok-punc">;</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="let name = 'Alice';\nlet age = 30;\n\n// Old way (concatenation)\nlet old = 'Hello, my name is ' + name + ' and I am ' + age + '.';\n\n// New way (template literal)\nlet message = \`Hello, my name is \${name} and I am \${age}.\`;\nlet future = \`Next year I will be \${age + 1}.\`;\n\n// Multi-line\nlet html = \`\n  <div>\n    <p>Hello</p>\n  </div>\n\`;">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#numbers-math" class="nav-prev">← Prev: Numbers & Math</a>
+            <a href="#conversion" class="nav-next">Next: Type Conversion →</a>
+          </div>
+        </section>
+
+        <!-- Section 8: Type Conversion -->
+        <section id="conversion" class="lesson-card" data-section="conversion">
+          <div class="lesson-header">
+            <div class="lesson-number">08</div>
+            <div class="lesson-meta">
+              <h2>Type Conversion</h2>
+              <p class="lesson-desc">Explicit conversion, falsy values, and the unary plus.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="conversion" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Prefer <strong>explicit conversions</strong>: <code>String()</code>, <code>Number()</code>, <code>Boolean()</code>. Implicit coercion happens in many operators and can produce unexpected results.</p>
+
+            <h3>To String</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">to-string.js</span>
+                <button class="code-copy-btn" data-copy="String(123)        // &quot;123&quot;\nString(true)       // &quot;true&quot;\nString(null)       // &quot;null&quot;\nString([1,2])      // &quot;1,2&quot;" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-func">String</span><span class="tok-punc">(</span><span class="tok-num">123</span><span class="tok-punc">)</span>        <span class="tok-comment">// "123"</span>
+<span class="tok-func">String</span><span class="tok-punc">(</span><span class="tok-kw">true</span><span class="tok-punc">)</span>       <span class="tok-comment">// "true"</span>
+<span class="tok-func">String</span><span class="tok-punc">(</span><span class="tok-kw">null</span><span class="tok-punc">)</span>       <span class="tok-comment">// "null"</span>
+<span class="tok-func">String</span><span class="tok-punc">(</span><span class="tok-punc">[</span><span class="tok-num">1</span><span class="tok-punc">,</span><span class="tok-num">2</span><span class="tok-punc">]</span><span class="tok-punc">)</span>      <span class="tok-comment">// "1,2"</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="String(123)        // '123'\nString(true)       // 'true'\nString(null)       // 'null'\nString([1,2])      // '1,2'">Copy</button>
+              </div>
+            </div>
+
+            <h3>To Number</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">to-number.js</span>
+                <button class="code-copy-btn" data-copy="Number(&quot;99.5&quot;)     // 99.5\nNumber(&quot;  100  &quot;)  // 100 (ignores spaces)\nNumber(true)       // 1\nNumber(false)      // 0\nNumber(null)       // 0\nNumber(undefined)  // NaN\nNumber(&quot;hello&quot;)    // NaN\n\n// Unary plus shortcut\n+&quot;50&quot;              // 50\n\n// Parsing\nparseInt(&quot;100px&quot;)   // 100\nparseFloat(&quot;3.14em&quot;) // 3.14\nparseInt(&quot;Chapter 2&quot;) // NaN" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-str">"99.5"</span><span class="tok-punc">)</span>     <span class="tok-comment">// 99.5</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-str">"  100  "</span><span class="tok-punc">)</span>  <span class="tok-comment">// 100 (ignores spaces)</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-kw">true</span><span class="tok-punc">)</span>       <span class="tok-comment">// 1</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-kw">false</span><span class="tok-punc">)</span>      <span class="tok-comment">// 0</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-kw">null</span><span class="tok-punc">)</span>       <span class="tok-comment">// 0</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-kw">undefined</span><span class="tok-punc">)</span>  <span class="tok-comment">// NaN</span>
+<span class="tok-func">Number</span><span class="tok-punc">(</span><span class="tok-str">"hello"</span><span class="tok-punc">)</span>    <span class="tok-comment">// NaN</span>
+
+<span class="tok-comment">// Unary plus shortcut</span>
+<span class="tok-op">+</span><span class="tok-str">"50"</span>              <span class="tok-comment">// 50</span>
+
+<span class="tok-comment">// Parsing</span>
+<span class="tok-func">parseInt</span><span class="tok-punc">(</span><span class="tok-str">"100px"</span><span class="tok-punc">)</span>   <span class="tok-comment">// 100</span>
+<span class="tok-func">parseFloat</span><span class="tok-punc">(</span><span class="tok-str">"3.14em"</span><span class="tok-punc">)</span> <span class="tok-comment">// 3.14</span>
+<span class="tok-func">parseInt</span><span class="tok-punc">(</span><span class="tok-str">"Chapter 2"</span><span class="tok-punc">)</span> <span class="tok-comment">// NaN</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="Number('99.5')     // 99.5\nNumber('  100  ')  // 100 (ignores spaces)\nNumber(true)       // 1\nNumber(false)      // 0\nNumber(null)       // 0\nNumber(undefined)  // NaN\nNumber('hello')    // NaN\n\n// Unary plus shortcut\n+'50'              // 50\n\n// Parsing\nparseInt('100px')   // 100\nparseFloat('3.14em') // 3.14\nparseInt('Chapter 2') // NaN">Copy</button>
+              </div>
+            </div>
+
+            <h3>To Boolean</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">to-boolean.js</span>
+                <button class="code-copy-btn" data-copy="Boolean(100)        // true\nBoolean(&quot;hello&quot;)    // true\nBoolean(&quot;false&quot;)    // true (non-empty string!)\nBoolean([])         // true\nBoolean({})         // true\n\n// The 6 Falsy Values\nBoolean(0)          // false\nBoolean(&quot;&quot;)         // false\nBoolean(null)       // false\nBoolean(undefined)  // false\nBoolean(NaN)        // false\nBoolean(false)      // false" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-num">100</span><span class="tok-punc">)</span>        <span class="tok-comment">// true</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-str">"hello"</span><span class="tok-punc">)</span>    <span class="tok-comment">// true</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-str">"false"</span><span class="tok-punc">)</span>    <span class="tok-comment">// true (non-empty string!)</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-punc">[</span><span class="tok-punc">]</span><span class="tok-punc">)</span>         <span class="tok-comment">// true</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-punc">{</span><span class="tok-punc">}</span><span class="tok-punc">)</span>         <span class="tok-comment">// true</span>
+
+<span class="tok-comment">// The 6 Falsy Values</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-num">0</span><span class="tok-punc">)</span>          <span class="tok-comment">// false</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-str">""</span><span class="tok-punc">)</span>         <span class="tok-comment">// false</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-kw">null</span><span class="tok-punc">)</span>       <span class="tok-comment">// false</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-kw">undefined</span><span class="tok-punc">)</span>  <span class="tok-comment">// false</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-kw">NaN</span><span class="tok-punc">)</span>        <span class="tok-comment">// false</span>
+<span class="tok-func">Boolean</span><span class="tok-punc">(</span><span class="tok-kw">false</span><span class="tok-punc">)</span>      <span class="tok-comment">// false</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="Boolean(100)        // true\nBoolean('hello')    // true\nBoolean('false')    // true (non-empty string!)\nBoolean([])         // true\nBoolean({})         // true\n\n// The 6 Falsy Values\nBoolean(0)          // false\nBoolean('')         // false\nBoolean(null)       // false\nBoolean(undefined)  // false\nBoolean(NaN)        // false\nBoolean(false)      // false">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#strings" class="nav-prev">← Prev: Strings</a>
+            <a href="#comparison" class="nav-next">Next: Comparison →</a>
+          </div>
+        </section>
+
+        <!-- Section 9: Comparison Deep Dive -->
+        <section id="comparison" class="lesson-card" data-section="comparison">
+          <div class="lesson-header">
+            <div class="lesson-number">09</div>
+            <div class="lesson-meta">
+              <h2>Comparison Deep Dive</h2>
+              <p class="lesson-desc">=== vs ==, relational traps, and object equality.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="comparison" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Use <code>===</code> and <code>!==</code> for predictable comparisons. Loose equality (<code>==</code>) performs complex coercion rules and is a common source of bugs.</p>
+
+            <h3>Strict Equality (===) — Simple Rules</h3>
+            <ol class="rules-list">
+              <li><span class="rule-num">1</span> Types different? → <code>false</code></li>
+              <li><span class="rule-num">2</span> Same type? → Compare values</li>
+              <li><span class="rule-num">3</span> Objects? → Same memory reference only</li>
+              <li><span class="rule-num">4</span> <code>NaN === NaN</code> → <code>false</code> (always)</li>
+            </ol>
+
+            <h3>Loose Equality (==) — Complex Rules</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Scenario</div>
+                <div class="table-cell">Result</div>
+              </div>
+              <div class="table-row"><div class="table-cell">Same types</div><div class="table-cell">Behaves like ===</div></div>
+              <div class="table-row"><div class="table-cell"><code>null == undefined</code></div><div class="table-cell"><code>true</code></div></div>
+              <div class="table-row"><div class="table-cell">String vs Number</div><div class="table-cell">Convert string to number</div></div>
+              <div class="table-row"><div class="table-cell">Boolean involved</div><div class="table-cell">Convert boolean to number (true→1, false→0)</div></div>
+              <div class="table-row"><div class="table-cell">Object vs Primitive</div><div class="table-cell">Convert object to primitive first</div></div>
+            </div>
+
+            <h3>Relational Operators (&lt; &gt; &lt;= &gt;=)</h3>
+            <div class="comparison-table three-col">
+              <div class="table-row table-header">
+                <div class="table-cell">Scenario</div>
+                <div class="table-cell">Behavior</div>
+              </div>
+              <div class="table-row"><div class="table-cell">Both strings</div><div class="table-cell">Dictionary (lexicographical) comparison</div></div>
+              <div class="table-row"><div class="table-cell">Anything else</div><div class="table-cell">Convert both to numbers, then compare</div></div>
+              <div class="table-row"><div class="table-cell"><code>undefined</code> involved</div><div class="table-cell">Becomes <code>NaN</code> → result always <code>false</code></div></div>
+            </div>
+
+            <h3>Famous Trap</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">trap.js</span>
+                <button class="code-copy-btn" data-copy="3 > 2 > 1    // false!\n// (3 > 2) → true\n// true > 1 → 1 > 1 → false" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-num">3</span> <span class="tok-op">></span> <span class="tok-num">2</span> <span class="tok-op">></span> <span class="tok-num">1</span>    <span class="tok-comment">// false!</span>
+<span class="tok-comment">// (3 > 2) → true</span>
+<span class="tok-comment">// true > 1 → 1 > 1 → false</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="3 > 2 > 1    // false!\n// (3 > 2) → true\n// true > 1 → 1 > 1 → false">Copy</button>
+              </div>
+            </div>
+
+            <h3>Objects and Equality</h3>
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">object-equality.js</span>
+                <button class="code-copy-btn" data-copy="const a = {x:1};\nconst b = {x:1};\na === b // false (different references)\n\nconst c = a;\nc === a // true (same reference)" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-kw">const</span> <span class="tok-var">a</span> <span class="tok-op">=</span> <span class="tok-punc">{</span><span class="tok-prop">x</span><span class="tok-op">:</span><span class="tok-num">1</span><span class="tok-punc">}</span><span class="tok-punc">;</span>
+<span class="tok-kw">const</span> <span class="tok-var">b</span> <span class="tok-op">=</span> <span class="tok-punc">{</span><span class="tok-prop">x</span><span class="tok-op">:</span><span class="tok-num">1</span><span class="tok-punc">}</span><span class="tok-punc">;</span>
+<span class="tok-var">a</span> <span class="tok-op">===</span> <span class="tok-var">b</span> <span class="tok-comment">// false (different references)</span>
+
+<span class="tok-kw">const</span> <span class="tok-var">c</span> <span class="tok-op">=</span> <span class="tok-var">a</span><span class="tok-punc">;</span>
+<span class="tok-var">c</span> <span class="tok-op">===</span> <span class="tok-var">a</span> <span class="tok-comment">// true (same reference)</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="const a = {x:1};\nconst b = {x:1};\na === b // false (different references)\n\nconst c = a;\nc === a // true (same reference)">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#conversion" class="nav-prev">← Prev: Type Conversion</a>
+            <a href="#quick-ref" class="nav-next">Next: Quick Ref →</a>
+          </div>
+        </section>
+
+        <!-- Section 10: Quick Reference Card -->
+        <section id="quick-ref" class="lesson-card" data-section="quick-ref">
+          <div class="lesson-header">
+            <div class="lesson-number">10</div>
+            <div class="lesson-meta">
+              <h2>Quick Reference Card</h2>
+              <p class="lesson-desc">Copy-paste ready cheat sheet for daily use.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="quick-ref" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <div class="code-block-wrapper">
+              <div class="code-header">
+                <span class="code-filename">cheat-sheet.js</span>
+                <button class="code-copy-btn" data-copy="// Variables\nconst PI = 3.14159;    // default: const\nlet count = 0;         // when you need reassignment\n// var — avoid in modern JS\n\n// Type checks\ntypeof x === &quot;string&quot;\nArray.isArray(arr)         // Not typeof!\nNumber.isNaN(x)            // Not isNaN()!\nNumber.isFinite(x)\n\n// Safe comparison\nalways use === and !==  // avoid == and !=\n\n// Common snippets\nMath.floor(Math.random() * (max - min + 1)) + min  // random int\nstr.trim().toLowerCase()  // common string normalization\n\n// Object reference trap\nlet a = {x: 1};\nlet b = a;     // Same object!\nb.x = 2;\nconsole.log(a.x); // 2" aria-label="Copy code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <pre class="example"><code><span class="tok-comment">// Variables</span>
+<span class="tok-kw">const</span> <span class="tok-var">PI</span> <span class="tok-op">=</span> <span class="tok-num">3.14159</span><span class="tok-punc">;</span>    <span class="tok-comment">// default: const</span>
+<span class="tok-kw">let</span> <span class="tok-var">count</span> <span class="tok-op">=</span> <span class="tok-num">0</span><span class="tok-punc">;</span>         <span class="tok-comment">// when you need reassignment</span>
+<span class="tok-comment">// var — avoid in modern JS</span>
+
+<span class="tok-comment">// Type checks</span>
+<span class="tok-kw">typeof</span> <span class="tok-var">x</span> <span class="tok-op">===</span> <span class="tok-str">"string"</span>
+<span class="tok-var">Array</span><span class="tok-punc">.</span><span class="tok-func">isArray</span><span class="tok-punc">(</span><span class="tok-var">arr</span><span class="tok-punc">)</span>         <span class="tok-comment">// Not typeof!</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-func">isNaN</span><span class="tok-punc">(</span><span class="tok-var">x</span><span class="tok-punc">)</span>            <span class="tok-comment">// Not isNaN()!</span>
+<span class="tok-var">Number</span><span class="tok-punc">.</span><span class="tok-func">isFinite</span><span class="tok-punc">(</span><span class="tok-var">x</span><span class="tok-punc">)</span>
+
+<span class="tok-comment">// Safe comparison</span>
+<span class="tok-comment">// always use === and !==  // avoid == and !=</span>
+
+<span class="tok-comment">// Common snippets</span>
+<span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">floor</span><span class="tok-punc">(</span><span class="tok-var">Math</span><span class="tok-punc">.</span><span class="tok-func">random</span><span class="tok-punc">(</span><span class="tok-punc">)</span> <span class="tok-op">*</span> <span class="tok-punc">(</span><span class="tok-var">max</span> <span class="tok-op">-</span> <span class="tok-var">min</span> <span class="tok-op">+</span> <span class="tok-num">1</span><span class="tok-punc">)</span><span class="tok-punc">)</span> <span class="tok-op">+</span> <span class="tok-var">min</span>  <span class="tok-comment">// random int</span>
+<span class="tok-var">str</span><span class="tok-punc">.</span><span class="tok-func">trim</span><span class="tok-punc">(</span><span class="tok-punc">)</span><span class="tok-punc">.</span><span class="tok-func">toLowerCase</span><span class="tok-punc">(</span><span class="tok-punc">)</span>  <span class="tok-comment">// common string normalization</span>
+
+<span class="tok-comment">// Object reference trap</span>
+<span class="tok-kw">let</span> <span class="tok-var">a</span> <span class="tok-op">=</span> <span class="tok-punc">{</span><span class="tok-prop">x</span><span class="tok-op">:</span> <span class="tok-num">1</span><span class="tok-punc">}</span><span class="tok-punc">;</span>
+<span class="tok-kw">let</span> <span class="tok-var">b</span> <span class="tok-op">=</span> <span class="tok-var">a</span><span class="tok-punc">;</span>     <span class="tok-comment">// Same object!</span>
+<span class="tok-var">b</span><span class="tok-punc">.</span><span class="tok-prop">x</span> <span class="tok-op">=</span> <span class="tok-num">2</span><span class="tok-punc">;</span>
+<span class="tok-func">console</span><span class="tok-punc">.</span><span class="tok-func">log</span><span class="tok-punc">(</span><span class="tok-var">a</span><span class="tok-punc">.</span><span class="tok-prop">x</span><span class="tok-punc">)</span><span class="tok-punc">;</span> <span class="tok-comment">// 2</span></code></pre>
+              <div class="code-actions">
+                <a class="btn-sm btn-primary" href="playground.html#lang=javascript" target="_blank">▶ Run</a>
+                <button class="btn-sm btn-secondary js-copy-btn" data-copy="// Variables\nconst PI = 3.14159;    // default: const\nlet count = 0;         // when you need reassignment\n// var — avoid in modern JS\n\n// Type checks\ntypeof x === 'string'\nArray.isArray(arr)         // Not typeof!\nNumber.isNaN(x)            // Not isNaN()!\nNumber.isFinite(x)\n\n// Safe comparison\n// always use === and !==  // avoid == and !=\n\n// Common snippets\nMath.floor(Math.random() * (max - min + 1)) + min  // random int\nstr.trim().toLowerCase()  // common string normalization\n\n// Object reference trap\nlet a = {x: 1};\nlet b = a;     // Same object!\nb.x = 2;\nconsole.log(a.x); // 2">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#comparison" class="nav-prev">← Prev: Comparison</a>
+            <a href="#projects" class="nav-next">Next: Projects →</a>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="lesson-card" data-section="projects">
+          <div class="lesson-header">
+            <div class="lesson-number">🛠️</div>
+            <div class="lesson-meta">
+              <h2>Projects & Exercises</h2>
+              <p class="lesson-desc">Hands-on projects to internalize everything you've learned.</p>
+            </div>
+            <button class="mark-complete-btn" data-section="projects" aria-label="Mark section complete">
+              <span class="complete-icon">✓</span>
+              <span class="complete-text">Mark Complete</span>
+            </button>
+          </div>
+
+          <div class="lesson-body">
+            <p>Hands-on projects help internalize concepts. Start with simple, focused projects, then extend them with additional features. Each project includes learning goals, a starter template, step-by-step tasks, and extension challenges.</p>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-badge beginner">Beginner</span>
+                <h3>Counter App</h3>
+              </div>
+              <p class="project-skills"><strong>Skills:</strong> DOM manipulation, event handling, state management.</p>
+              <ol class="project-steps">
+                <li>Create a display element and increment/decrement buttons.</li>
+                <li>Implement handlers that update state and re-render the UI.</li>
+                <li>Edge case: prevent the counter from going below zero.</li>
+              </ol>
+              <p class="project-extensions"><strong>Extensions:</strong> Add a step input, persist in <code>localStorage</code>, add keyboard shortcuts.</p>
+              <a href="playground.html#lang=javascript" class="btn-sm btn-primary" target="_blank">Start in Playground →</a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-badge intermediate">Intermediate</span>
+                <h3>Todo List</h3>
+              </div>
+              <p class="project-skills"><strong>Skills:</strong> Lists, event delegation, localStorage, simple UI.</p>
+              <ol class="project-steps">
+                <li>Implement adding items, marking complete, and deleting items.</li>
+                <li>Store the todo list in <code>localStorage</code> so it persists across reloads.</li>
+              </ol>
+              <p class="project-extensions"><strong>Extensions:</strong> Add edit-in-place, filters (active/completed), keyboard accessibility.</p>
+              <a href="playground.html#lang=javascript" class="btn-sm btn-primary" target="_blank">Start in Playground →</a>
+            </div>
+
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-badge intermediate">Intermediate</span>
+                <h3>Fetch & Display</h3>
+              </div>
+              <p class="project-skills"><strong>Skills:</strong> Fetch API, Promises/async-await, error handling, rendering lists from remote data.</p>
+              <ol class="project-steps">
+                <li>Fetch sample JSON (e.g., JSONPlaceholder) and render results in a list or cards.</li>
+                <li>Handle loading and error states in the UI.</li>
+              </ol>
+              <p class="project-extensions"><strong>Extensions:</strong> Add pagination, caching responses in <code>sessionStorage</code>, or integrate a small search/filter UI.</p>
+              <a href="playground.html#lang=javascript" class="btn-sm btn-primary" target="_blank">Start in Playground →</a>
+            </div>
+
+            <h3>Project Workflow Tips</h3>
+            <div class="tip-box">
+              <div class="tip-icon">🚀</div>
+              <div>
+                <ul>
+                  <li>Start small — build a minimal feature that works end-to-end.</li>
+                  <li>Iterate — add one improvement at a time.</li>
+                  <li>Write clear TODOs and tests for critical logic where appropriate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-nav">
+            <a href="#quick-ref" class="nav-prev">← Prev: Quick Ref</a>
+            <a href="quiz.html" class="nav-next nav-quiz">🎯 Take the Quiz →</a>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="curriculum-sidebar">
+        <div class="sidebar-card">
+          <h4>Quick Start</h4>
+          <p>Open any example by clicking <strong>Run in Playground</strong>, or <strong>Copy</strong> to grab the code. Press <kbd class="kbd-key">Ctrl</kbd>+<kbd class="kbd-key">Enter</kbd> in the Playground to run.</p>
+          <a href="playground.html" class="btn-primary" style="margin-top:12px; display:inline-block;">Launch Playground</a>
+        </div>
+
+        <div class="sidebar-card sticky-nav">
+          <h4>On This Page</h4>
+          <nav class="sidebar-nav">
+            <a href="#why-js" data-nav="why-js"><span class="nav-check">○</span> 1. Why JavaScript</a>
+            <a href="#vars-scope" data-nav="vars-scope"><span class="nav-check">○</span> 2. Variables & Scope</a>
+            <a href="#types" data-nav="types"><span class="nav-check">○</span> 3. Data Types</a>
+            <a href="#operators" data-nav="operators"><span class="nav-check">○</span> 4. Operators</a>
+            <a href="#control-flow" data-nav="control-flow"><span class="nav-check">○</span> 5. Control Flow</a>
+            <a href="#numbers-math" data-nav="numbers-math"><span class="nav-check">○</span> 6. Numbers & Math</a>
+            <a href="#strings" data-nav="strings"><span class="nav-check">○</span> 7. Strings</a>
+            <a href="#conversion" data-nav="conversion"><span class="nav-check">○</span> 8. Type Conversion</a>
+            <a href="#comparison" data-nav="comparison"><span class="nav-check">○</span> 9. Comparison</a>
+            <a href="#quick-ref" data-nav="quick-ref"><span class="nav-check">○</span> 10. Quick Ref</a>
+            <a href="#projects" data-nav="projects"><span class="nav-check">○</span> Projects</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Your Progress</h4>
+          <div class="sidebar-progress">
+            <div class="sidebar-progress-bar">
+              <div class="sidebar-progress-fill" id="sidebar-progress-fill"></div>
+            </div>
+            <div class="sidebar-progress-text" id="sidebar-progress-text">0% complete</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &lt;devcraft/&gt; · built with ❤️ for curious minds · © 2026
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/javascript-page.js"></script>
+</body>
+</html>

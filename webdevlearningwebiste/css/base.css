@@ -1,0 +1,163 @@
+/* ============================================
+   JS FORGE - BASE STYLES
+   Variables, Reset, Fonts, Body, Scrollbar
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #07070a;
+  --bg-elevated: #0f0f16;
+  --bg-card: #13131f;
+  --bg-card-hover: #1a1a2e;
+  --bg-input: #0a0a12;
+  --border: #1e1e2d;
+  --border-light: #2a2a40;
+  --border-hover: #3a3a55;
+
+  --text: #f0f0f5;
+  --text-secondary: #8a8aa3;
+  --text-muted: #5a5a75;
+
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --accent-secondary: #6366f1;
+
+  --green: #22c55e;
+  --yellow: #eab308;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --orange: #f97316;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.5);
+  --shadow-glow: 0 8px 24px var(--accent-glow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection */
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: var(--text);
+}
+
+/* Code & Pre */
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 30%, var(--accent-light) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hidden {
+  display: none !important;
+}
+/* ============================================
+   THEME SYSTEM — Light Mode Override
+   Only overrides specific variables; everything else stays untouched
+   ============================================ */
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #f8fafc;
+  --bg-card: #f1f5f9;
+  --bg-card-hover: #e2e8f0;
+  --bg-input: #ffffff;
+  --border: #e2e8f0;
+  --border-light: #cbd5e1;
+  --border-hover: #94a3b8;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #7c3aed;
+  --accent-light: #8b5cf6;
+  --accent-glow: rgba(124, 58, 237, 0.15);
+  --accent-secondary: #6366f1;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 8px 24px var(--accent-glow);
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom-color: var(--border);
+}
+
+[data-theme="light"] .editor-mockup,
+[data-theme="light"] .editor-pane,
+[data-theme="light"] .output-pane {
+  background: #ffffff;
+  border-color: var(--border);
+}
+
+[data-theme="light"] textarea#code-input,
+[data-theme="light"] .example-editor {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+[data-theme="light"] .tech-card:hover,
+[data-theme="light"] .feature-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .preview-card,
+[data-theme="light"] .info-card {
+  background: #f8fafc;
+}

@@ -1,0 +1,154 @@
+/* ============================================
+   JS FORGE - COMING SOON PAGES SHARED STYLES
+   Used by: html5.html, css3.html, javascript.html, react.html,
+            typescript.html, nodejs.html, git.html, restapis.html
+   ============================================ */
+
+.coming-soon-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 24px 80px;
+  position: relative;
+}
+
+.coming-soon-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cs-icon {
+  font-size: 5rem;
+  margin-bottom: 24px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.cs-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.cs-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  color: white;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.cs-desc {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.cs-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.notify-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.notify-form input {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.notify-form input:focus {
+  border-color: var(--accent);
+}
+
+.notify-form button {
+  padding: 12px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.notify-form button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.feature-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 700px;
+  margin: 48px auto 0;
+  width: 100%;
+}
+
+.preview-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.preview-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+}
+
+.preview-card h4 {
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.preview-card p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cs-title { font-size: 2rem; }
+  .cs-icon { font-size: 3.5rem; }
+  .notify-form { flex-direction: column; }
+  .feature-preview { grid-template-columns: 1fr; }
+}
