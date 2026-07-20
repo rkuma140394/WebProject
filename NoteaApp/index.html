@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="hero">
+            <div class="title-group">
+                <div class="logo-pill">
+                    <img src="images/notes.png" alt="notes icon">
+                </div>
+                <div>
+                    <p class="eyebrow">Your personal space</p>
+                    <h1>Notes Studio</h1>
+                </div>
+            </div>
 
+            <div class="hero-actions">
+                <div id="saveStatus" class="status-pill">Ready to write</div>
+                <button id="createBtn" class="btn">
+                    <img src="images/edit.png" alt="edit icon">
+                    Create note
+                </button>
+            </div>
+        </header>
+
+        <main class="notes-panel">
+            <div class="notes-toolbar">
+                <div>
+                    <h2>Recent notes</h2>
+                    <p>Capture ideas quickly and keep them organized.</p>
+                </div>
+                <div id="noteCount" class="counter">0 notes</div>
+            </div>
+
+            <div id="notesContainer" class="notes-container"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
